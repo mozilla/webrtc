@@ -1,0 +1,98 @@
+digraph G {
+ranksep=.75; size = "7.5,7.5";
+{
+node [shape=plaintext, fontsize=16]; /* the time-line graph */ 
+     "April 6" -> "April 13"-> "April 20"-> "April 27"-> "May 4"-> "May 11"-> "May 18"-> "May 25"-> "June 1"-> "June 8"-> "June 15"-> "June 22"-> "June 29"-> "July 6"-> "July 13"-> "July 20"-> "July 27"
+}
+
+	{rank = same; "April 27";
+	   webrtc [label = "WebRTC landed"];
+	   libjingle [label = "libjingle landed (?)"];
+	   roc [label = "roc's patches landed"];
+	   genericio [label = "Generic Networking abstraction"]
+	   dtlssrtp [label = "DTLS-SRTP (NSS) landed"]
+        }
+
+	{rank = same; "May 4";
+	   sipccimport [label = "SIPCC landed"]
+	}
+		
+
+	{rank = same; "May 11";
+	   getusermedia [label = "getUserMedia Landed"]
+	   sctpimport [label = "Import SCTP"];
+	   dtlstransport [label = "DTLS Transport" ];
+	   sipccnoreg [ label = "Conditionalize SIPCC Reg"]
+	}
+	dtlssrtp -> dtlstransport
+	genericio -> dtlstransport
+	
+	{rank = same; "May 25";
+	   nicer [label = "Import nICEr"];
+	   nrappkit [label = "Import nrappkit"];
+	   sipccnocpr [ label = "SIPCC replace CPR"];
+	   sipccconcurrent [ label = "SIPCC concurrent users"]
+        }	   	   
+	nrappkit -> nicer
+
+	{rank = same; "June 1";
+	   sctpio [ label = "Abstract SCTP I/O"]
+        }
+	
+
+	{rank = same; "June 8";
+	   icetransport [ label = "ICE Transport"];
+	   dtlsfingerprint [ label = "DTLS Fingerprint\n(SDP)"];
+	   iceparams [label = "ICE (SDP)"];
+	   sipccsdp [ label = "SIPCC SDP Separation"];
+	   sipccmedia [ label = "SIPCC media separation"]
+	}
+	sipccimport -> iceparams
+	sipccimport -> dtlsfingerprint
+	nicer -> icetransport
+	genericio -> icetransport
+	iceparams -> icetransport
+
+	{rank = same; "June 15";
+	   transport [label = "Transport Service"];
+	   sctp [label = "SCTP"];
+	   sipccrefactor [label = "Refactor SIPCC"];
+	 } 
+	 sipccimport -> sipccrefactor
+	 sipccnoreg -> sipccrefactor
+	 sipccnocpr -> sipccrefactor
+	 sipccmedia -> sipccrefactor
+	 sipccsdp -> sipccrefactor
+	 sipccconcurrent -> sipccrefactor
+	 sipccrefactor -> "JSEP"
+	 dtlstransport -> transport
+	 icetransport -> transport
+
+        {rank = same; "June 29"; 
+	   peerconnection [label = "PeerConnection API"]; JSEP;
+	   datachannel [label = "DataChannel"];
+	   srtp [label = "SRTP (with DTLS)"] }
+        dtlsfingerprint -> srtp
+	dtlssrtp -> srtp
+	sipccrefactor -> srtp
+
+        {rank = same; "July 13"; 
+	   working [ label = "Working System" ] }
+	
+        roc->getusermedia
+	webrtc->getusermedia
+	libjingle->getusermedia
+	
+	transport -> working
+	transport -> datachannel
+	peerconnection -> working
+	peerconnection -> "JSEP"
+	"JSEP" -> working
+	sctpio-> sctp
+	sctpimport -> sctp
+	sctp -> datachannel
+	transport ->sctp
+	getusermedia -> working
+	datachannel -> working
+	srtp -> working
+}
