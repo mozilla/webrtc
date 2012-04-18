@@ -11,6 +11,7 @@ node [shape=plaintext, fontsize=16]; /* the time-line graph */
 	   roc [label = "roc's patches landed"];
 	   genericio [label = "Generic Networking abstraction"]
 	   dtlssrtp [label = "DTLS-SRTP (NSS) landed"]
+	   sipccnoreg [ label = "Conditionalize SIPCC Reg"]
         }
 
 	{rank = same; "May 4";
@@ -22,7 +23,7 @@ node [shape=plaintext, fontsize=16]; /* the time-line graph */
 	   getusermedia [label = "getUserMedia Landed"]
 	   sctpimport [label = "Import SCTP"];
 	   dtlstransport [label = "DTLS Transport" ];
-	   sipccnoreg [ label = "Conditionalize SIPCC Reg"]
+	   sipccsdp [ label = "Start SIPCC in SDP Mode"];
 	}
 	dtlssrtp -> dtlstransport
 	genericio -> dtlstransport
@@ -30,10 +31,12 @@ node [shape=plaintext, fontsize=16]; /* the time-line graph */
 	{rank = same; "May 25";
 	   nicer [label = "Import nICEr"];
 	   nrappkit [label = "Import nrappkit"];
-	   sipccnocpr [ label = "SIPCC replace CPR"];
-	   sipccconcurrent [ label = "SIPCC concurrent users"]
+           sipccjsep [ label = "JSEP createOffer/createAnswer in SIPCC"];
+	   sipccsetdesc [ label = "setLocalDesc/setRemoteDesc in SIPCC"];
         }	   	   
 	nrappkit -> nicer
+        sipccsdp -> sipccjsep
+        sipccsdp->sipccsetdesc
 
 	{rank = same; "June 1";
 	   sctpio [ label = "Abstract SCTP I/O"]
@@ -44,12 +47,13 @@ node [shape=plaintext, fontsize=16]; /* the time-line graph */
 	   icetransport [ label = "ICE Transport"];
 	   dtlsfingerprint [ label = "DTLS Fingerprint\n(SDP)"];
 	   iceparams [label = "ICE (SDP)"];
-	   sipccsdp [ label = "SIPCC SDP Separation"];
-	   sipccmedia [ label = "SIPCC media separation"]
+           sipccmediahints [ label = "Add Media Hints API to SIPCC"];
 	}
 	sipccimport -> iceparams
 	sipccimport -> dtlsfingerprint
 	nicer -> icetransport
+        sipccjsep -> sipccmediahints
+        sipccsetdesc -> sipccmediahints
 	genericio -> icetransport
 	iceparams -> icetransport
 
@@ -57,13 +61,11 @@ node [shape=plaintext, fontsize=16]; /* the time-line graph */
 	   transport [label = "Transport Service"];
 	   sctp [label = "SCTP"];
 	   sipccrefactor [label = "Refactor SIPCC"];
+           sipccmultipeerconn [label = "SIPCC handles multiple PeerConnections"]
 	 } 
 	 sipccimport -> sipccrefactor
 	 sipccnoreg -> sipccrefactor
-	 sipccnocpr -> sipccrefactor
-	 sipccmedia -> sipccrefactor
-	 sipccsdp -> sipccrefactor
-	 sipccconcurrent -> sipccrefactor
+	 sipccmediahints -> sipccrefactor
 	 sipccrefactor -> "JSEP"
 	 dtlstransport -> transport
 	 icetransport -> transport
@@ -75,6 +77,7 @@ node [shape=plaintext, fontsize=16]; /* the time-line graph */
         dtlsfingerprint -> srtp
 	dtlssrtp -> srtp
 	sipccrefactor -> srtp
+        sipccmultipeerconn -> peerconnection
 
         {rank = same; "July 13"; 
 	   working [ label = "Working System" ] }
