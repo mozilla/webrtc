@@ -6,23 +6,17 @@ node [shape=plaintext, fontsize=16]; /* the time-line graph */
 }
 
 	{rank = same; "April 27";
-	   webrtc [label = "WebRTC landed"];
-	   libjingle [label = "libjingle landed (?)"];
-	   roc [label = "roc's patches landed"];
+	   webrtc [label = "base WebRTC landed on m-c"];
+	   mediastream [label = "MediaStream landed on m-c"];
 	   genericio [label = "Generic Networking abstraction"]
 	   dtlssrtp [label = "DTLS-SRTP (NSS) landed"]
 	   sipccnoreg [ label = "Conditionalize SIPCC Reg"]
         }
 
-	{rank = same; "May 4";
-	   sipccimport [label = "SIPCC landed"]
-	}
-		
-
 	{rank = same; "May 11";
 	   getusermedia [label = "getUserMedia Landed"]
-	   sctpimport [label = "Import SCTP"];
 	   dtlstransport [label = "DTLS Transport" ];
+	   sctpupdate [label = "Clean up SCTP API"];
 	   sipccsdp [ label = "Start SIPCC in SDP Mode"];
 	}
 	dtlssrtp -> dtlstransport
@@ -33,6 +27,7 @@ node [shape=plaintext, fontsize=16]; /* the time-line graph */
 	   nrappkit [label = "Import nrappkit"];
            sipccjsep [ label = "JSEP createOffer/createAnswer in SIPCC"];
 	   sipccsetdesc [ label = "setLocalDesc/setRemoteDesc in SIPCC"];
+	   datachannelupdate [label = "Update DataChannel protocol"];
         }	   	   
 	nrappkit -> nicer
         sipccsdp -> sipccjsep
@@ -49,8 +44,7 @@ node [shape=plaintext, fontsize=16]; /* the time-line graph */
 	   iceparams [label = "ICE (SDP)"];
            sipccmediahints [ label = "Add Media Hints API to SIPCC"];
 	}
-	sipccimport -> iceparams
-	sipccimport -> dtlsfingerprint
+
 	nicer -> icetransport
         sipccjsep -> sipccmediahints
         sipccsetdesc -> sipccmediahints
@@ -63,7 +57,6 @@ node [shape=plaintext, fontsize=16]; /* the time-line graph */
 	   sipccrefactor [label = "Refactor SIPCC"];
            sipccmultipeerconn [label = "SIPCC handles multiple PeerConnections"]
 	 } 
-	 sipccimport -> sipccrefactor
 	 sipccnoreg -> sipccrefactor
 	 sipccmediahints -> sipccrefactor
 	 sipccrefactor -> "JSEP"
@@ -72,7 +65,7 @@ node [shape=plaintext, fontsize=16]; /* the time-line graph */
 
         {rank = same; "June 29"; 
 	   peerconnection [label = "PeerConnection API"]; JSEP;
-	   datachannel [label = "DataChannel"];
+	   datachannel [label = "Full DataChannel"];
 	   srtp [label = "SRTP (with DTLS)"] }
         dtlsfingerprint -> srtp
 	dtlssrtp -> srtp
@@ -82,20 +75,22 @@ node [shape=plaintext, fontsize=16]; /* the time-line graph */
         {rank = same; "July 13"; 
 	   working [ label = "Working System" ] }
 	
-        roc->getusermedia
+        mediastream->getusermedia
 	webrtc->getusermedia
-	libjingle->getusermedia
 	
 	transport -> working
 	transport -> datachannel
+	getusermedia -> peerconnection
+	getusermedia -> working
 	peerconnection -> working
 	peerconnection -> "JSEP"
 	"JSEP" -> working
 	sctpio-> sctp
-	sctpimport -> sctp
+	sctpupdate -> sctp
+	sctpupdate -> datachannelupdate
+	datachannelupdate -> datachannel
 	sctp -> datachannel
 	transport ->sctp
-	getusermedia -> working
 	datachannel -> working
 	srtp -> working
 }
