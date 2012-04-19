@@ -9,12 +9,12 @@ node [shape=plaintext, fontsize=16]; /* the time-line graph */
 	   webrtc [label = "base WebRTC landed on m-c"];
 	   mediastream [label = "MediaStream landed on m-c"];
 	   genericio [label = "Generic Networking abstraction"]
-	   dtlssrtp [label = "DTLS-SRTP (NSS) landed"]
+	   dtlssrtp [label = "DTLS-SRTP (NSS) landed (where?)"]
 	   sipccnoreg [ label = "Conditionalize SIPCC Reg"]
         }
 
 	{rank = same; "May 11";
-	   getusermedia [label = "getUserMedia Landed"]
+	   getusermedia [label = "getUserMedia"]
 	   dtlstransport [label = "DTLS Transport" ];
 	   sctpupdate [label = "Clean up SCTP API"];
 	   sipccsdp [ label = "Start SIPCC in SDP Mode"];
