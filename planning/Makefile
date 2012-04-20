@@ -4,4 +4,4 @@
 all: webrtc.pdf
 
 %.pdf: %.dot
-	dot -Tpdf $< $@
+	dot -Tpdf $< > $@
