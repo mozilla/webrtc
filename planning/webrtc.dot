@@ -10,7 +10,6 @@ node [shape=plaintext, fontsize=16]; /* the time-line graph */
 	   mediastream [label = "MediaStream landed on m-c"];
 	   genericio [label = "Generic Networking abstraction"]
 	   dtlssrtp [label = "DTLS-SRTP (NSS) landed (where?)"]
-	   sipccnoreg [ label = "Conditionalize SIPCC Reg"]
 	   opussrc [label = "Opus source landed on m-c"]
         }
 
@@ -22,13 +21,12 @@ node [shape=plaintext, fontsize=16]; /* the time-line graph */
 	}
 	dtlssrtp -> dtlstransport
 	genericio -> dtlstransport
-	opussrc -> getusermedia
 	
 	{rank = same; "May 25";
 	   nicer [label = "Import nICEr"];
 	   nrappkit [label = "Import nrappkit"];
 	   sipccsetdesc [ label = "setLocalDesc/setRemoteDesc in SIPCC"];
-	   datachannelupdate [label = "Update DataChannel protocol"];
+	   datachannelupdate [label = "Update DataChannel impl"];
 	   opuswebrtc [label = "Opus patches for WebRTC.org"];
            sipccmediaconstraints [ label = "Add Media Constraints API to SIPCC"];
         }	   	   
@@ -64,19 +62,21 @@ node [shape=plaintext, fontsize=16]; /* the time-line graph */
 	{rank = same; "June 15";
 	   transport [label = "Transport Service"];
 	   sctp [label = "SCTP"];
-	   sipccrefactor [label = "Refactor SIPCC"];
+	   sipccrefactor [label = "SIPCC refactored"];
            sipccmultipeerconn [label = "SIPCC handles multiple PeerConnections"]
 	   peerconnection_first [label = "partial PeerConnection"];
 	 } 
-	 sipccnoreg -> sipccrefactor
 	 sipccusemediastreams -> sipccrefactor
 	 sipccrefactor -> "JSEP"
 	 dtlstransport -> transport
 	 icetransport -> transport
 	 sipccusemediastreams -> peerconnection_first
 
+        {rank = same; "June 22"; 
+	   JSEP; }
+
         {rank = same; "June 29"; 
-	   peerconnection [label = "PeerConnection API"]; JSEP;
+	   peerconnection [label = "PeerConnection API"];
 	   datachannel [label = "Full DataChannel"];
 	   srtp [label = "SRTP (with DTLS)"] }
         dtlsfingerprint -> srtp
@@ -94,8 +94,7 @@ node [shape=plaintext, fontsize=16]; /* the time-line graph */
 	transport -> datachannel
 	peerconnection_first -> peerconnection
 	peerconnection -> working
-	peerconnection -> "JSEP"
-	"JSEP" -> working
+	"JSEP" -> peerconnection
 	sctpio-> sctp
 	sctpupdate -> sctp
 	sctpupdate -> datachannelupdate
