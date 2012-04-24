@@ -6,39 +6,39 @@ node [shape=plaintext, fontsize=16]; /* the time-line graph */
 }
 
 	{rank = same; "April 27";
-	   webrtc [label = "base WebRTC landed on m-c"];
-	   mediastream [label = "MediaStream landed on m-c"];
-	   genericio [label = "Generic Networking abstraction"]
-	   dtlssrtp [label = "DTLS-SRTP (NSS) landed (where?)"]
-	   opussrc [label = "Opus source landed on m-c"]
+	   webrtc [label = "base WebRTC landed on m-c - Randell"];
+	   mediastream [label = "MediaStream landed on m-c - ROC"];
+	   genericio [label = "Generic Networking abstraction - EKR"]
+	   dtlssrtp [label = "DTLS-SRTP (NSS) landed (where?) - EKR"]
+	   opussrc [label = "Opus source landed on m-c - Rillian"]
         }
 
 	{rank = same; "May 11";
-	   getusermedia [label = "getUserMedia"]
-	   dtlstransport [label = "DTLS Transport" ];
-	   sctpupdate [label = "Clean up SCTP API"];
-	   sipccsdp [ label = "Start SIPCC in SDP Mode"];
+	   getusermedia [label = "getUserMedia - Anant"]
+	   dtlstransport [label = "DTLS Transport - EKR" ];
+	   sctpupdate [label = "Clean up SCTP API - Randell w/ SCTP Authors"];
+	   sipccsdp [ label = "Start SIPCC in SDP Mode - Enda"];
 	}
 	dtlssrtp -> dtlstransport
 	genericio -> dtlstransport
 	
 	{rank = same; "May 25";
-	   nicer [label = "Import nICEr"];
-	   nrappkit [label = "Import nrappkit"];
-	   sipccsetdesc [ label = "setLocalDesc/setRemoteDesc in SIPCC"];
-	   datachannelupdate [label = "Update DataChannel impl"];
-	   opuswebrtc [label = "Opus patches for WebRTC.org"];
-           sipccmediaconstraints [ label = "Add Media Constraints API to SIPCC"];
+	   nicer [label = "Import nICEr - EKR"];
+	   nrappkit [label = "Import nrappkit - EKR"];
+	   sipccsetdesc [ label = "setLocalDesc/setRemoteDesc in SIPCC - Enda"];
+	   datachannelupdate [label = "Update DataChannel impl - Randell"];
+	   opuswebrtc [label = "Opus patches for WebRTC.org - Rillian"];
+           sipccmediaconstraints [ label = "Add Media Constraints API to SIPCC - Enda"];
         }	   	   
 	nrappkit -> nicer
         sipccsdp -> sipccmediaconstraints
         sipccsdp -> sipccsetdesc
 
 	{rank = same; "June 1";
-	   sctpio [ label = "Abstract SCTP I/O"]
-	   opus [ label = "Functional Opus calls"];
-           sipccsetmediainterface [label ="Abstract mediastream interface to SIPCC"];
-           sipccjsep [ label = "JSEP createOffer/createAnswer in SIPCC"];
+	   sctpio [ label = "Abstract SCTP I/O - EKR w/ SCTP Authors"]
+	   opus [ label = "Functional Opus calls - Rillian"];
+           sipccsetmediainterface [label ="Abstract mediastream interface to SIPCC - Suhas & Enda"];
+           sipccjsep [ label = "JSEP createOffer/createAnswer in SIPCC - Enda"];
         }
 	getusermedia -> peerconnection_first
 	opussrc -> opus
@@ -47,10 +47,10 @@ node [shape=plaintext, fontsize=16]; /* the time-line graph */
         sipccsetdesc -> sipccsetmediainterface
 
 	{rank = same; "June 8";
-	   icetransport [ label = "ICE Transport"];
-	   dtlsfingerprint [ label = "DTLS Fingerprint\n(SDP)"];
-	   iceparams [label = "ICE (SDP)"];
-           sipccusemediastreams [label = "SIPCC using media streams"];
+	   icetransport [ label = "ICE Transport - EKR"];
+	   dtlsfingerprint [ label = "DTLS Fingerprint\n(SDP) - EKR & Enda"];
+	   iceparams [label = "ICE (SDP) - EKR & Enda"];
+           sipccusemediastreams [label = "SIPCC using media streams - Suhas & Enda"];
 	}
 
 	nicer -> icetransport
@@ -60,11 +60,11 @@ node [shape=plaintext, fontsize=16]; /* the time-line graph */
 	iceparams -> icetransport
 
 	{rank = same; "June 15";
-	   transport [label = "Transport Service"];
-	   sctp [label = "SCTP"];
-	   sipccrefactor [label = "SIPCC refactored"];
-           sipccmultipeerconn [label = "SIPCC handles multiple PeerConnections"]
-	   peerconnection_first [label = "partial PeerConnection"];
+	   transport [label = "Transport Service - EKR"];
+	   sctp [label = "SCTP - Randell"];
+	   sipccrefactor [label = "SIPCC refactored (milestone) - Maire"];
+           sipccmultipeerconn [label = "SIPCC handles multiple PeerConnections - Enda"]
+	   peerconnection_first [label = "partial PeerConnection - Randell"];
 	 } 
 	 sipccusemediastreams -> sipccrefactor
 	 sipccrefactor -> "JSEP"
@@ -73,19 +73,19 @@ node [shape=plaintext, fontsize=16]; /* the time-line graph */
 	 sipccusemediastreams -> peerconnection_first
 
         {rank = same; "June 22"; 
-	   JSEP; }
+	   JSEP [ label = "JSEP working - Enda & Ethan"]; }
 
         {rank = same; "June 29"; 
-	   peerconnection [label = "PeerConnection API"];
-	   datachannel [label = "Full DataChannel"];
-	   srtp [label = "SRTP (with DTLS)"] }
+	   peerconnection [label = "PeerConnection API - Randell"];
+	   datachannel [label = "Full DataChannel - Randell"];
+	   srtp [label = "SRTP (with DTLS) - EKR"] }
         dtlsfingerprint -> srtp
 	dtlssrtp -> srtp
 	sipccrefactor -> srtp
         sipccmultipeerconn -> peerconnection
 
         {rank = same; "July 13"; 
-	   working [ label = "Working System" ] }
+	   working [ label = "Working System (milestone) - Maire" ] }
 	
         mediastream->getusermedia
 	webrtc->getusermedia
