@@ -8,9 +8,13 @@ node [shape=plaintext, fontsize=16]; /* the time-line graph */
 	{rank = same; "April 27";
 	   webrtc [label = "base WebRTC landed on m-c\nRandell"];
 	   mediastream [label = "MediaStream landed on m-c\nROC"];
+	   opussrc [label = "Opus source landed on m-c\nRillian"]
+        }
+        
+        {
+           rank = same; "May 4";
 	   genericio [label = "Generic Networking abstraction\nEKR"]
 	   dtlssrtp [label = "DTLS-SRTP (NSS) landed (where?)\nEKR"]
-	   opussrc [label = "Opus source landed on m-c\nRillian"]
         }
 
 	{rank = same; "May 11";
