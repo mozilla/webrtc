@@ -19,7 +19,7 @@ node [shape=plaintext, fontsize=16]; /* the time-line graph */
 	{rank = same; "May 11";
 	   webrtc [label = "base WebRTC landed on m-c\nRandell"];
 	   opussrc [label = "Opus source landed on m-c\nRillian"]
-	   getusermedia [label = "getUserMedia\nAnant"]
+	   getusermedia [label = "getUserMedia backend\nAnant"]
 	   dtlstransport [label = "DTLS Transport\nEKR" ];
            sipccmediaconstraints [ label = "Add Media Constraints API to SIPCC\nEnda"]; // 1 week
 	}
