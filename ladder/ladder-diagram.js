@@ -1,3 +1,7 @@
+var ARROW = 1;
+var DARROW = 2;
+var NOTE = 2;
+
 
 var Ladder = function() {
     var participants = [];
@@ -6,7 +10,9 @@ var Ladder = function() {
     var time_height = 30;
     var current_time = 0;
     var arrow_head_length = 7;
-    var label_adjust = -.15;
+    var label_space_x = 3;
+    var label_space_y = -3;
+
     var max_time = 0;
     var paper = undefined;
     
@@ -76,6 +82,47 @@ var Ladder = function() {
         };
     };
 
+    var compute_arrow = function(x, double_headed) {
+        // Each of these is a single event
+        var start = parse_endpoint(x[0]);
+        var end = parse_endpoint(x[1]);
+        var label = x[2];
+        var flags = x[3] || {};
+        var flags = deep_copy(flags);
+        
+        if (!start.time) {
+            start.time = current_time;
+        }
+        
+        if (!end.time) {
+            end.time = current_time;
+            if (flags && flags.duration) {
+                end.time += flags.duration;
+            }
+        }
+        
+        flags.double_headed = double_headed;
+        
+        arrows.push({
+                        start : start,
+                        end:end,
+                        label:label,
+                        flags:flags
+                    });
+
+        max_time = Math.max(start.time, end.time);
+
+        if (flags.advance === undefined) {
+            if (flags.duration === undefined)
+                current_time++;
+            else
+                current_time += flags.duration + 1;
+        }
+        else {
+            current_time += flags.advance;
+        }
+    };
+
     var compute_ladder = function(desc) {
         var start;
         var end;
@@ -89,43 +136,14 @@ var Ladder = function() {
         console.log(desc);
         
         _.each(desc.data, function(x) {
-                   // Each of these is a single event
-                   start = parse_endpoint(x[0]);
-                   end = parse_endpoint(x[1]);
-                   label = x[2];
-                   flags = x[3] || {};
-                   
-                   if (!start.time) {
-                       start.time = current_time;
+                   // First value is the type
+                   if (x[0] == ARROW) {
+                       compute_arrow(x.slice(1), false);
                    }
-                      
-                   if (!end.time) {
-                       end.time = current_time;
-                       if (flags && flags.duration) {
-                           end.time += flags.duration;
-                       }
-                   }
-                      
-                   arrows.push({
-                                   start : start,
-                                   end:end,
-                                   label:label
-                               });
-
-                   max_time = Math.max(start.time, end.time);
-
-                   if (flags.advance === undefined) {
-                       if (flags.duration === undefined)
-                           current_time++;
-                       else
-                           current_time += flags.duration + 1;
-                   }
-                   else {
-                       current_time += flags.advance;
+                   else if (x[0] == DARROW) {
+                       compute_arrow(x.slice(1), true);
                    }
         });
-
-        console.log(arrows);
     };
 
     var columnx = function(col) {
@@ -137,12 +155,12 @@ var Ladder = function() {
     };
 
 
-    var label = function(col, time, str) {
+    var draw_label = function(col, time, str) {
         return '<text ' + pos(col, time).str() + ' text-anchor="middle">' +
             str + "</text>\n";
     };
 
-    var rotate_attr = function(angle, x, y) {
+    var draw_rotate_attr = function(angle, x, y) {
         return ' transform="rotate(' + angle + ', ' + x + ', ' + y + ')" ';
     };
 
@@ -151,17 +169,17 @@ var Ladder = function() {
         var xoffset = arrow_head_length * direction;
         
         result += '<line ' + p.str(1) + p.adjust(xoffset, -1 * arrow_head_length).str(2)
-            + rotate_attr(angle, p.x, p.y) + ' width="1" + stroke="black"/>';
+            + draw_rotate_attr(angle, p.x, p.y) + ' width="1" + stroke="black"/>';
         result += '<line ' + p.str(1) + p.adjust(xoffset, 1 * arrow_head_length).str(2) 
-            + rotate_attr(angle, p.x, p.y) + ' width="1" + stroke="black"/>';
+            + draw_rotate_attr(angle, p.x, p.y) + ' width="1" + stroke="black"/>';
         return result;
     };
 
-    var arrow = function(c1, t1, c2, t2, str, double_headed) {
-        var midx = (c1 + c2) / 2;
-        var midy = (t1 + t2) / 2;
+    var draw_arrow = function(c1, t1, c2, t2, str, double_headed) {
         var left;
         var right;
+        var text_anchor;
+        var text_align;
         var l2r = false;
         var result = "";
 
@@ -180,12 +198,20 @@ var Ladder = function() {
             left = pos(c1, t1);
             right = pos(c2, t2);
             l2r = true;
+            text_anchor = left.adjust(label_space_x, label_space_y);
+            text_align = "start";
         }
         else {
             left = pos(c2, t2);
             right = pos(c1, t1)
+            text_anchor = right.adjust(-1 * label_space_x, label_space_y);
+            text_align = "end";
         }
-
+        if (double_headed) {
+            text_anchor = pos((c1 + c2)/2, (t1 + t2)/2).adjust(0, label_space_y);
+            text_align = "middle";
+        }
+        
         if (l2r || double_headed) {
             result += arrow_head(angle, right, -1);
         };
@@ -195,16 +221,16 @@ var Ladder = function() {
         }
         
         if (str) {
-            result += '<text ' + pos(midx, midy + label_adjust).str() + 
-                ' text-anchor="middle" '
-                + rotate_attr(angle, columnx(midx), timey(midy + label_adjust)) + 
+            result += '<text ' + text_anchor.str() + 
+                ' text-anchor="' + text_align + '" ';
+            result += draw_rotate_attr(angle, text_anchor.x, text_anchor.y) +
                 '>' + 
                 str + "</text>\n";
         }
         return result;
     };
 
-    var line = function(c1, t1, c2, t2) {
+    var draw_line = function(c1, t1, c2, t2) {
         return '<line ' 
             + pos(c1, t1).str(1)
             + pos(c2, t2).str(2) + 
@@ -218,18 +244,20 @@ var Ladder = function() {
         var result = '<svg width="' + width + '" height="' + height + '">\n';
         
         _.each(participants, function(x, col) {
-                   result += label(col, -3, x[1]);
-                   result += line(col, -2, col, max_time + 1);
-                   result += label(col, max_time + 3, x[1]);
+                   result += draw_label(col, -3, x[1]);
+                   result += draw_line(col, -2, col, max_time + 1);
+                   result += draw_label(col, max_time + 3, x[1]);
                });
 
         _.each(arrows, function(x) {
-                  result += arrow(x.start.column,
+                  result += draw_arrow(x.start.column,
                                   x.start.time,
                                   x.end.column,
                                   x.end.time,
-                                  x.label);
+                                  x.label,
+                                  x.flags.double_headed);
                });
+        
         result += '</svg>';
         
         return result;

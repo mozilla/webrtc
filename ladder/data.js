@@ -7,17 +7,17 @@ var data = {
     ],
     
     data : [
-        ["AJS", "AB", "pc = new PeerConnection()"],
-        ["AB", "AJS", "onicechange('gathering')"],
-        ["BB", "BJS", "TEST", {
+        [ARROW, "AJS", "AB", "pc = new PeerConnection()"],
+        [ARROW, "AB", "AJS", "onicechange('gathering')"],
+        [ARROW, "BB", "BJS", "TEST", {
              duration:2,
              advance:0
          }
         ],
-        ["BJS", "BB", "TEST2", {
+        [ARROW, "BJS", "BB", "TEST2", {
              duration:2,
          }
         ],
-        ["BB", "AB", "More"],
+        [DARROW, "BB", "AB", "More"],
     ]
 };
