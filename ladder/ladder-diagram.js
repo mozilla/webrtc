@@ -118,7 +118,7 @@ var Ladder = function() {
                        if (flags.duration === undefined)
                            current_time++;
                        else
-                           current_time += flags.duration;
+                           current_time += flags.duration + 1;
                    }
                    else {
                        current_time += flags.advance;
