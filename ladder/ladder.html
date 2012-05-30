@@ -1,0 +1,21 @@
+<script src="https://raw.github.com/documentcloud/underscore/master/underscore.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="http://github.com/DmitryBaranovskiy/raphael/raw/master/raphael-min.js"></script>
+<script src="ladder-diagram.js"></script>
+<script src="data.js"></script>
+
+<script>
+     $(
+	 function() {
+	     var result;
+
+	     Ladder.compute_ladder(data);
+	     result = Ladder.draw_ladder();
+	     $('body').append(result);
+	 }
+	 );
+</script>
+
+</head>
+<body>
+</body>
