@@ -1,10 +1,10 @@
 var ARROW = 'ARROW';
 var DARROW = 'DARROW';
 var NOTE = 'NOTE';
-
+var TIME = 'TIME';
 
 var Ladder = function() {
-
+    var timepoints = {};
     var participants = [];
     var arrows = [];
     var column_width = 200;
@@ -54,11 +54,13 @@ var Ladder = function() {
     };
 
     var parse_endpoint = function(endpoint) {
-        var endpoint_re = /([a-zA-Z0-9]+)(:(.*))?/;
+        var endpoint_re = /([a-zA-Z0-9]+)(@(.*))?/;
         var pi = -1;
         var time = null;
         var tmp;
+        var timepoint;
         
+        endpoint = endpoint.trim();
         var m = endpoint.match(endpoint_re);
         if (!m) {
             return null;
@@ -70,9 +72,20 @@ var Ladder = function() {
         // is there a time?
         if (m[3]) {
             // First see if it is an integer
-            tmp = integer.parseInt(m[3], 10);
+            tmp = parseInt(m[3], 10);
             if (!isNaN(tmp)) {
                 time = tmp;
+            }
+            else {
+                timepoint = m[3];
+                // It must be a timepoint
+                debug(JSON.stringify(timepoints));
+                debug('"' + timepoint + '"');
+                debug(timepoints[timepoint]);
+                if (timepoints[m[3]] === undefined) {
+                    die("Undefined timepoint " + m[3]);
+                }
+                time = timepoints[m[3]];
             }
         }
                 
@@ -83,20 +96,38 @@ var Ladder = function() {
         };
     };
 
+    var record_timepoint = function(timepoint) {
+        debug("Recording timepoint " + timepoint);
+
+        if (timepoints[timepoint] !== undefined)
+            die("Duplicate timepoint " + timepoint);
+        timepoints[timepoint] = current_time;
+    };
+
     var compute_arrow = function(x, double_headed) {
+        debug("Computing arrow");
+        debug("X = " + JSON.stringify(x));
+
         // Each of these is a single event
         var start = parse_endpoint(x[0]);
         var end = parse_endpoint(x[1]);
         var label = x[2];
         var flags = x[3] || {};
         var flags = deep_copy(flags);
-        
+        var later_time;
+
         if (!start.time) {
             start.time = current_time;
         }
-        
+
+        // Record the start time if there is a timepoint label
+        if (flags.timepoint) {
+            debug("Flags = " + JSON.stringify(flags));
+            record_timepoint(flags.timepoint);
+        }
+
         if (!end.time) {
-            end.time = current_time;
+            end.time = start.time;
             if (flags && flags.duration) {
                 end.time += flags.duration;
             }
@@ -110,18 +141,14 @@ var Ladder = function() {
                         label:label,
                         flags:flags
                     });
-
-        max_time = Math.max(start.time, end.time);
-
-        if (flags.advance === undefined) {
-            if (flags.duration === undefined)
-                current_time++;
-            else
-                current_time += flags.duration + 1;
-        }
-        else {
-            current_time += flags.advance;
-        }
+        
+        later_time = Math.max(start.time, end.time);
+        max_time = Math.max(current_time, later_time);
+        
+        debug("Later time = " + later_time);
+        current_time = later_time + (flags.advance || 1);
+        
+        debug("EVENT START = " + start.time + " END=" + end.time + " current_time=" + current_time);
     };
 
     var compute_ladder = function(desc) {
@@ -129,7 +156,8 @@ var Ladder = function() {
         var end;
         var label;
         var flags;
-
+        
+        debug("Computing ladder");
         if (desc.participants) {
             participants = deep_copy(desc.participants);
         }
