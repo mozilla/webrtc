@@ -147,6 +147,12 @@ var Ladder = function() {
         };
     };
 
+    var compute_note = function(desc) {
+	
+
+
+    };
+
     var columnx = function(col) {
         return (col + .5) * column_width;
     };

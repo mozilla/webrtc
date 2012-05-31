@@ -1,32 +1,28 @@
+var parse_json = false;
 
-load( "json2.js" );
 load( "ladder-diagram.js" );
+load( "ladder-parser.js");
 
-// Load the file from stdin 
-var numLines = 0;
-var lines = new Array();
-do {
-    lines[ numLines ] = readline();
-    if ( lines[ numLines ] === "EOF" ) {
-        lines.pop();
-        break;
-    }
-    numLines++;
-} while ( true );
+var data;
 
+if (parse_json) {
+    // Load the file from stdin 
+    var numLines = 0;
+    var lines = new Array();
+    do {
+	lines[ numLines ] = readline();
+	if ( lines[ numLines ] === "EOF" ) {
+            lines.pop();
+            break;
+	}
+	numLines++;
+    } while ( true );
 
-//print the file 
-var i=0;
-for ( i=0; i<numLines; i++ ) {
-   // print( "line ",i,": ", lines[i] );
+    data = JSON.parse( lines.join(' ') );
 }
-
-//print( "about to parse '" , lines.join(' ') , "'" );
-var data = JSON.parse( lines.join(' ') );
-//print( "stdin=", JSON.stringify( data ) );
-
-//load( 'data.js' );
-//print( "load =",JSON.stringify( data ) );
+else {
+    data = LadderParse.parse();
+}
 
 Ladder.compute_ladder(data);
 result = Ladder.draw_ladder();
