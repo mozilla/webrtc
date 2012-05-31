@@ -1,0 +1,5 @@
+*.svg
+*.png
+batik-rasterizer.jar
+lib
+*~

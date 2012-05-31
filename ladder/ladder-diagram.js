@@ -4,6 +4,7 @@ var NOTE = 2;
 
 
 var Ladder = function() {
+
     var participants = [];
     var arrows = [];
     var column_width = 200;
@@ -133,17 +134,17 @@ var Ladder = function() {
             participants = deep_copy(desc.participants);
         }
 
-        console.log(desc);
-        
-        _.each(desc.data, function(x) {
-                   // First value is the type
-                   if (x[0] == ARROW) {
-                       compute_arrow(x.slice(1), false);
-                   }
-                   else if (x[0] == DARROW) {
-                       compute_arrow(x.slice(1), true);
-                   }
-        });
+        var i=0;
+        for( i=0; i<desc.data.length; i++ )  {
+            var x = desc.data[i];
+            // First value is the type
+            if (x[0] == ARROW) {
+                compute_arrow(x.slice(1), false);
+            }
+            else if (x[0] == DARROW) {
+                compute_arrow(x.slice(1), true);
+            }
+        };
     };
 
     var columnx = function(col) {
@@ -169,9 +170,9 @@ var Ladder = function() {
         var xoffset = arrow_head_length * direction;
         
         result += '<line ' + p.str(1) + p.adjust(xoffset, -1 * arrow_head_length).str(2)
-            + draw_rotate_attr(angle, p.x, p.y) + ' width="1" + stroke="black"/>';
+            + draw_rotate_attr(angle, p.x, p.y) + ' width="1" ' + ' stroke="black"/>';
         result += '<line ' + p.str(1) + p.adjust(xoffset, 1 * arrow_head_length).str(2) 
-            + draw_rotate_attr(angle, p.x, p.y) + ' width="1" + stroke="black"/>';
+            + draw_rotate_attr(angle, p.x, p.y) + ' width="1" ' + ' stroke="black"/>';
         return result;
     };
 
@@ -185,7 +186,7 @@ var Ladder = function() {
 
         var angle;
 
-        angle = Math.atan((timey(t2) - timey(t1)) / (columnx(c2) - columnx(c1))) * 180/3.14;
+        angle = Math.atan2((timey(t2) - timey(t1)) , (columnx(c2) - columnx(c1))) * 180/3.14;
 
         // Basic line
         result += '<line ' 
@@ -241,22 +242,29 @@ var Ladder = function() {
         var width = columnx(participants.length);
         var height =  timey(max_time + 5);
         
-        var result = '<svg width="' + width + '" height="' + height + '">\n';
+        var result = '<svg baseProfile="full" xmlns="http://www.w3.org/2000/svg" width="' + width + '" height="' + height + '">\n';
         
-        _.each(participants, function(x, col) {
-                   result += draw_label(col, -3, x[1]);
-                   result += draw_line(col, -2, col, max_time + 1);
-                   result += draw_label(col, max_time + 3, x[1]);
-               });
+        var i=0;
 
-        _.each(arrows, function(x) {
-                  result += draw_arrow(x.start.column,
-                                  x.start.time,
-                                  x.end.column,
-                                  x.end.time,
-                                  x.label,
-                                  x.flags.double_headed);
-               });
+        for( i=0; i<participants.length; i++ ) {
+            x = participants[i][0];
+            col = participants[i][1];
+            
+            result += draw_label(col, -3, x[1]);
+            result += draw_line(col, -2, col, max_time + 1);
+            result += draw_label(col, max_time + 3, x[1]);
+        };
+
+
+        for( i=0; i<arrows.length; i++ )  {
+            x =  arrows[i];
+            result += draw_arrow(x.start.column,
+                                 x.start.time,
+                                 x.end.column,
+                                 x.end.time,
+                                 x.label,
+                                 x.flags.double_headed);
+        };
         
         result += '</svg>';
         
