@@ -1,5 +1,6 @@
 participant Bob's JS as Bob
 participant Alice as Alice
 Bob -> Alice: Test
-Bob -> Alice: Test [duration=2, advance=0]
-Alice -> Bob: Another test [duration = 1]
+here: Bob -> Alice: Test duration=2[duration=2]
+Alice@here -> Bob: Another test duration=1 [duration=1]
+Bob -> Alice: xxx

@@ -7,39 +7,51 @@
  * 
  * 'participant' <participant-name> 'as' <participant-handle>
  * <participant-handle> [->|<->] <participant-handle> ':' <message>  [ <options> ]
+ * 'time' '=' [+-]<number>
  * 
  * <options> ::= '[' <option> [ '=' <value>], ... ']' ]
  * 
  */
 
+var die = function(msg) {
+    print("ERROR: "+ msg);
+    throw msg;
+};
+
+var DEBUG = false;
+
+var debug = function(msg) {
+    if (DEBUG)
+        print("DEBUG: " + msg);
+};
+
 // Maybe something cooler than regexps would be cool here.
 // I miss yacc.
 var LadderParse = function() {
-    var identifier_re = '[A-Za-z0-9_\\- \\(\\)]+';
+    var identifier_re = '[A-Za-z0-9_\\- \\(\\)@]+';
     var words_re = '[^\\[\\]]+';
-    var options_re = '(.*)\\s+(\\[([^\\]]+)\\])$';
+    var timepoint_re = '(([A-Za-z0-9]+)\s*:)?';
+    var options_re = '(.*)\\s*(\\[([^\\]]+)\\])$';
     var participant_re = '^participant\\s+(' + words_re + ')\\s+as\\s+(' + identifier_re + ')';
-    var arrow_re = '^(' + identifier_re + ')\\s*(<?->)\\s*(' + identifier_re + ')\\s*:\\s*(' + words_re + ')';
-
-    var die = function(msg) {
-	print("ERROR: "+ msg);
-	throw msg;
-    };
+    var arrow_re = '^' + timepoint_re + '\\s*(' + identifier_re + ')\\s*(<?->)\\s*(' + identifier_re + ')\\s*:\\s*(' + words_re + ')';
+    var time_re = '^time\\s*=\\s*';
+    
 
     var handlers = {
     };
 
-
     var parse_participant = function(json, m, o) {
-	json.participants.push([m[2], m[1]]);
+	json.participants.push([m[2].trim(), m[1].trim()]);
     };
     handlers[participant_re] = parse_participant;
     
     var parse_arrow = function(json, m, o) {
-	var from = m[1];
-	var type = m[2] === "<->" ? DARROW : ARROW;
-	var to = m[3];
-	var msg = m[4];
+        
+        var timepoint = m[2];
+	var from = m[3].trim();
+	var type = m[4] === "<->" ? DARROW : ARROW;
+	var to = m[5].trim();
+	var msg = m[6];
 
 	var opt = o || {};
 	// Canonicalize options
@@ -49,6 +61,10 @@ var LadderParse = function() {
 	if (opt.advance !== undefined) {
 	    opt.advance = parseInt(opt.advance,10);
 	}
+
+        debug("TIMEPOINT " + m[2]);
+        if (m[2])
+            opt.timepoint = m[2];
 
 	json.data.push([type, from, to, msg, opt]);
     };
@@ -89,7 +105,7 @@ var LadderParse = function() {
 	    l_orig = l;
 //	    l = l.strip();
 	    
-	    opt = null;
+	    opt = {};
 
 	    // First pull the options off
 	    if (m = l.match(options_re)) {
@@ -97,6 +113,7 @@ var LadderParse = function() {
 		l = m[1];
 		opt = parse_options(m[3]);
 	    }
+            opt.line_ct__ = line_ct;
 
 	    // Now we can parse the start of the line as expected
 	    match = false;
@@ -110,8 +127,8 @@ var LadderParse = function() {
 	    if (!match)
 		die("No match at line " + line_ct + ' :' + l_orig);
 	}
-
-//	print(JSON.stringify(json));
+        
+        debug("Parsed: " + JSON.stringify(json));
 	return json;
     };
 
