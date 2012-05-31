@@ -170,9 +170,9 @@ var Ladder = function() {
         var xoffset = arrow_head_length * direction;
         
         result += '<line ' + p.str(1) + p.adjust(xoffset, -1 * arrow_head_length).str(2)
-            + draw_rotate_attr(angle, p.x, p.y) + ' width="1" + stroke="black"/>';
+            + draw_rotate_attr(angle, p.x, p.y) + ' width="1" ' + ' stroke="black"/>';
         result += '<line ' + p.str(1) + p.adjust(xoffset, 1 * arrow_head_length).str(2) 
-            + draw_rotate_attr(angle, p.x, p.y) + ' width="1" + stroke="black"/>';
+            + draw_rotate_attr(angle, p.x, p.y) + ' width="1" ' + ' stroke="black"/>';
         return result;
     };
 
@@ -186,7 +186,7 @@ var Ladder = function() {
 
         var angle;
 
-        angle = Math.atan((timey(t2) - timey(t1)) / (columnx(c2) - columnx(c1))) * 180/3.14;
+        angle = Math.atan2((timey(t2) - timey(t1)) , (columnx(c2) - columnx(c1))) * 180/3.14;
 
         // Basic line
         result += '<line ' 
