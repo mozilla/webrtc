@@ -1,6 +1,6 @@
-var ARROW = 1;
-var DARROW = 2;
-var NOTE = 2;
+var ARROW = 'ARROW';
+var DARROW = 'DARROW';
+var NOTE = 'NOTE';
 
 
 var Ladder = function() {
@@ -186,13 +186,9 @@ var Ladder = function() {
 
         var angle;
 
-<<<<<<< HEAD
-        angle = Math.atan2((timey(t2) - timey(t1)) , (columnx(c2) - columnx(c1))) * 180/3.14;
-=======
         // angle = Math.atan2((timey(t2) - timey(t1)) , (columnx(c2) - columnx(c1))) * 180/3.14;
         // TODO (fluffy@cisco.com): This works and atan2 does not. Feel free to fix it.
         angle = Math.atan((timey(t2) - timey(t1)) / (columnx(c2) - columnx(c1))) * 180/3.14;
->>>>>>> c1d3cd723d9ee836cad74d76a877c4cfd775f455
 
         // Basic line
         result += '<line ' 
@@ -250,29 +246,6 @@ var Ladder = function() {
         
         var result = '<svg baseProfile="full" xmlns="http://www.w3.org/2000/svg" width="' + width + '" height="' + height + '">\n';
         
-<<<<<<< HEAD
-        var i=0;
-
-        for( i=0; i<participants.length; i++ ) {
-            x = participants[i][0];
-            col = participants[i][1];
-            
-            result += draw_label(col, -3, x[1]);
-            result += draw_line(col, -2, col, max_time + 1);
-            result += draw_label(col, max_time + 3, x[1]);
-        };
-
-
-        for( i=0; i<arrows.length; i++ )  {
-            x =  arrows[i];
-            result += draw_arrow(x.start.column,
-                                 x.start.time,
-                                 x.end.column,
-                                 x.end.time,
-                                 x.label,
-                                 x.flags.double_headed);
-        };
-=======
         participants.forEach(function(x, col) {
                    result += draw_label(col, -3, x[1]);
                    result += draw_line(col, -2, col, max_time + 1);
@@ -287,7 +260,6 @@ var Ladder = function() {
                                   x.label,
                                   x.flags.double_headed);
                });
->>>>>>> c1d3cd723d9ee836cad74d76a877c4cfd775f455
         
         result += '</svg>';
         
