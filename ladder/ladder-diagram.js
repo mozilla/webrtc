@@ -134,7 +134,7 @@ var Ladder = function() {
             participants = deep_copy(desc.participants);
         }
 
-        console.log(desc);
+        //  console.log(desc);
         
         desc.data.forEach(function(x) {
                    // First value is the type
