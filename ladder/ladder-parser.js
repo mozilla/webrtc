@@ -89,6 +89,8 @@ var LadderParse = function() {
 	    l_orig = l;
 //	    l = l.strip();
 	    
+	    opt = null;
+
 	    // First pull the options off
 	    if (m = l.match(options_re)) {
 		// There are options
