@@ -242,7 +242,7 @@ var Ladder = function() {
         var width = columnx(participants.length);
         var height =  timey(max_time + 5);
         
-        var result = '<svg width="' + width + '" height="' + height + '">\n';
+        var result = '<svg baseProfile="full" xmlns="http://www.w3.org/2000/svg" width="' + width + '" height="' + height + '">\n';
         
         participants.forEach(function(x, col) {
                    result += draw_label(col, -3, x[1]);
