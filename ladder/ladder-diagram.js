@@ -186,7 +186,9 @@ var Ladder = function() {
 
         var angle;
 
-        angle = Math.atan2((timey(t2) - timey(t1)) , (columnx(c2) - columnx(c1))) * 180/3.14;
+        // angle = Math.atan2((timey(t2) - timey(t1)) , (columnx(c2) - columnx(c1))) * 180/3.14;
+        // TODO (fluffy@cisco.com): This works and atan2 does not. Feel free to fix it.
+        angle = Math.atan((timey(t2) - timey(t1)) / (columnx(c2) - columnx(c1))) * 180/3.14;
 
         // Basic line
         result += '<line ' 
