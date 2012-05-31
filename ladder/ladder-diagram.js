@@ -242,10 +242,10 @@ var Ladder = function() {
         var width = columnx(participants.length);
         var height =  timey(max_time + 5);
         
-        var result = '<svg width="' + width + '" height="' + height + '">\n';
+        var result = '<svg baseProfile="full" xmlns="http://www.w3.org/2000/svg" width="' + width + '" height="' + height + '">\n';
         
         var i=0;
-
+        /* TODO put back in 
         for( i=0; i<participants.length; i++ ) {
             x = participants[i][0];
             col = participants[i][1];
@@ -254,6 +254,7 @@ var Ladder = function() {
             result += draw_line(col, -2, col, max_time + 1);
             result += draw_label(col, max_time + 3, x[1]);
         };
+        */
 
         for( i=0; i<arrows.length; i++ )  {
             x =  arrows[i];
