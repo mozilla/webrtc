@@ -1,7 +1,7 @@
 var ARROW = 'ARROW';
 var DARROW = 'DARROW';
 var NOTE = 'NOTE';
-var TIME = 'TIME';
+var ADVANCE = 'ADVANCE';
 
 var Ladder = function() {
     var timepoints = {};
@@ -151,6 +151,10 @@ var Ladder = function() {
         debug("EVENT START = " + start.time + " END=" + end.time + " current_time=" + current_time);
     };
 
+    var compute_advance = function(x) {
+        current_time += x[0];
+    };
+
     var compute_ladder = function(desc) {
         var start;
         var end;
@@ -166,11 +170,14 @@ var Ladder = function() {
         
         desc.data.forEach(function(x) {
                    // First value is the type
-                   if (x[0] == ARROW) {
+                   if (x[0] === ARROW) {
                        compute_arrow(x.slice(1), false);
                    }
-                   else if (x[0] == DARROW) {
+                   else if (x[0] === DARROW) {
                        compute_arrow(x.slice(1), true);
+                   }
+                   else if (x[0] === ADVANCE) {
+                       compute_advance(x.slice(1), true);
                    }
         });
     };
@@ -293,6 +300,7 @@ var Ladder = function() {
         
         return result;
     };
+
 
     return {
         compute_ladder : compute_ladder,
