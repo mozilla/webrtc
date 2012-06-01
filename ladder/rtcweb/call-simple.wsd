@@ -11,12 +11,12 @@ A <-> Web: Load Page
 A <-> Web: Authenticate
 AppA -> A: create PeerConnection()
 A -> TurnA: Alloc
-TurnA -> A: 
+TurnA -> A: IPs and Ports
 B <-> Web: Load Page 
 B <-> Web: Authenticate
 AppB -> B: create PeerConnection()
 B -> TurnB: Alloc
-TurnB -> B: 
+TurnB -> B: IPs and Ports
 Alice -> AppA: Call Bob 
 AppA -> A: addStream( data )
 AppA -> A: addStream( audio/video )
@@ -42,7 +42,7 @@ TurnB <-> A: DTLS
 B <-> TurnB: SCTP/Data
 TurnB <-> A: SCTP/Data
 A -> AppA: onRemoteStream( data )
-Web@sendPrAns -> AppA: PR_Answer [duration=8]
+Web@sendPrAns -> AppA: PR_Answer [duration=9]
 AppA -> A: setRemote
 A -> TurnA: Perm
 Bob -> AppB: Accept Audio and Video 
