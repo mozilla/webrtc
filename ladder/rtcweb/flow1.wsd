@@ -1,6 +1,7 @@
 title CULLEN'S AWESOME DIAGRAM
 set autonumber true
-
+set time_height 20
+set column_width 150
 participant Alice's Turn as TurnA
 participant Alice's Browser as A
 participant Alice's App as AppA

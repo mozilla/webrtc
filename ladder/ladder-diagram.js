@@ -176,6 +176,11 @@ var Ladder = function() {
             debug('title = ' + title);
         };
 
+	if (desc.column_width)
+	    column_width = desc.column_width;
+	if (desc.time_height)
+	    time_height = desc.time_height;
+
         if (desc.participants) {
             participants = deep_copy(desc.participants);
         }
@@ -275,7 +280,7 @@ var Ladder = function() {
             result += '<text ' + text_anchor.str() + 
                 ' text-anchor="' + text_align + '" ';
             result += draw_rotate_attr(angle, text_anchor.x, text_anchor.y) +
-//                ' stroke = "' + color + '" ' +
+               ' fill = "' + color + '" ' +
                 '>' + 
                 str + "</text>\n";
         }
