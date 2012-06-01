@@ -20,7 +20,7 @@ TurnA -> A:
 B <-> Web: Load Page 
 B <-> Web: Authenticate
 AppB -> B: create PeerConnection()
-B -> TurnB: Alloc
+B -> TurnB: Alloc [color=red]
 TurnA -> B: 
 
 Alice -> AppA: Call Bob 
