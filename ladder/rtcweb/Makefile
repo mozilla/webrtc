@@ -7,7 +7,7 @@ SRC  := $(wildcard *.wsd)
 SVG  := $(patsubst %.wsd,%.svg,$(SRC))
 PNG  := $(patsubst %.wsd,%.png,$(SRC)) 
 
-all:  $(AVG) $(PNG) 
+all:  $(SVG) $(PNG) 
 
 clean:
 	- rm -f *.svg *.png
