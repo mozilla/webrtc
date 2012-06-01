@@ -100,10 +100,19 @@ var LadderParse = function() {
 	var line_ct = 0;
 	var match = false;
 
-	while(l = readline()) {
+	while(true) {
+            l = readline();
+            debug(l);
+            if (l === "EOFEOFEOFEOFEOFEOFEOFEOFEOFEOF")
+                break;
+
+            if (!l) // Blank line
+                continue;
+            if (l.match('#.*')) // Comment
+                continue;
+
 	    line_ct++;
 	    l_orig = l;
-//	    l = l.strip();
 	    
 	    opt = {};
 
