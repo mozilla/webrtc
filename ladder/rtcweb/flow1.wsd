@@ -7,7 +7,20 @@ participant Bob as Bob
 participant Bob's App as AppB
 participant Bob's Browse as B
 participant Bob's Turn as TurnB
-Bob -> Alice: Test
-here: Bob -> Alice: Test duration=2[duration=2]
-Alice@here -> Bob: Another test duration=1 [duration=1]
-Bob -> Alice: xxx
+A <-> Web: Load Page 
+A <-> Web: Authenticate
+AppA -> A: create PeerConnection()
+A -> TurnA: Alloc
+TurnA -> A: 
+
+ 
+B <-> Web: Load Page 
+B <-> Web: Authenticate
+AppB -> B: create PeerConnection()
+B -> TurnB: Alloc
+TurnA -> B: 
+
+Alice -> AppA: Call Bob 
+AppA -> A: addStream( data )
+AppA -> A: addStream( audio/video )
+
