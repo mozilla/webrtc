@@ -28,6 +28,7 @@ var debug = function(msg) {
 // Maybe something cooler than regexps would be cool here.
 // I miss yacc.
 var LadderParse = function() {
+    var title_re = '^title\\s+(.*)';
     var identifier_re = '[A-Za-z0-9_\\- \\(\\)@]+';
     var words_re = '[^\\[\\]]+';
     var timepoint_re = '(([A-Za-z0-9]+)\s*:)?';
@@ -78,6 +79,16 @@ var LadderParse = function() {
         json.data.push([ADVANCE, 2]);
     };
     handlers[advance_re] = parse_advance;
+
+    var parse_title = function(json, m, o) {
+        if (json.title) {
+            die("Title already specified as: " + json.title);
+        };
+
+        json.title = m[1];
+    };
+    handlers[title_re] = parse_title;
+
 
     var parse_options = function(opts) {
 	// Options are a sequence of comma-separated values, with optional

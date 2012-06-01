@@ -6,6 +6,7 @@ var ADVANCE = 'ADVANCE';
 var Ladder = function() {
     var timepoints = {};
     var participants = [];
+    var title = "";
     var arrows = [];
     var column_width = 200;
     var time_height = 30;
@@ -162,12 +163,16 @@ var Ladder = function() {
         var flags;
         
         debug("Computing ladder");
+        debug(JSON.stringify(desc));
+        if (desc.title) {
+            title = desc.title;  
+            debug('title = ' + title);
+        };
+
         if (desc.participants) {
             participants = deep_copy(desc.participants);
         }
 
-        //  console.log(desc);
-        
         desc.data.forEach(function(x) {
                    // First value is the type
                    if (x[0] === ARROW) {
@@ -280,7 +285,12 @@ var Ladder = function() {
         var height =  timey(max_time + 5);
         
         var result = '<svg baseProfile="full" xmlns="http://www.w3.org/2000/svg" width="' + width + '" height="' + height + '">\n';
-        
+
+        if (title) {
+            debug("Drawing title");
+            result += draw_label(participants.length/2, -4, title);
+        };
+
         participants.forEach(function(x, col) {
                    result += draw_label(col, -3, x[1]);
                    result += draw_line(col, -2, col, max_time + 1);
