@@ -6,11 +6,13 @@ var ADVANCE = 'ADVANCE';
 var Ladder = function() {
     var timepoints = {};
     var participants = [];
+    var desc_;
     var title = "";
     var arrows = [];
     var column_width = 200;
     var time_height = 30;
     var current_time = 0;
+    var current_arrow = 0;
     var arrow_head_length = 7;
     var label_space_x = 3;
     var label_space_y = -3;
@@ -136,6 +138,10 @@ var Ladder = function() {
         
         flags.double_headed = double_headed;
         
+        if (desc_.autonumber === "true") {
+            current_arrow ++;
+            label = "" + current_arrow + ". " + label;
+        }
         arrows.push({
                         start : start,
                         end:end,
@@ -162,6 +168,7 @@ var Ladder = function() {
         var label;
         var flags;
         
+        desc_ = deep_copy(desc);
         debug("Computing ladder");
         debug(JSON.stringify(desc));
         if (desc.title) {
