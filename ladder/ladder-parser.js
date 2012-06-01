@@ -7,7 +7,7 @@
  * 
  * 'participant' <participant-name> 'as' <participant-handle>
  * <participant-handle> [->|<->] <participant-handle> ':' <message>  [ <options> ]
- * 'time' '=' [+-]<number>
+ * 'advance' <number>
  * 
  * <options> ::= '[' <option> [ '=' <value>], ... ']' ]
  * 
@@ -34,9 +34,8 @@ var LadderParse = function() {
     var options_re = '(.*)\\s*(\\[([^\\]]+)\\])$';
     var participant_re = '^participant\\s+(' + words_re + ')\\s+as\\s+(' + identifier_re + ')';
     var arrow_re = '^' + timepoint_re + '\\s*(' + identifier_re + ')\\s*(<?->)\\s*(' + identifier_re + ')\\s*:\\s*(' + words_re + ')';
-    var time_re = '^time\\s*=\\s*';
+    var advance_re = '^advance\\s+(\\d+)';
     
-
     var handlers = {
     };
 
@@ -70,6 +69,16 @@ var LadderParse = function() {
     };
     handlers[arrow_re] = parse_arrow;
 
+    var parse_advance = function(json, m, o) {
+        var advance;
+        
+        advance = parseInt(m[1], 10);
+        if (isNaN(advance))
+            die("Couldn't parse advance " + m[0]);
+        json.data.push([ADVANCE, 2]);
+    };
+    handlers[advance_re] = parse_advance;
+
     var parse_options = function(opts) {
 	// Options are a sequence of comma-separated values, with optional
 	// assignment, i.e., a, b=c, d=f
@@ -100,10 +109,19 @@ var LadderParse = function() {
 	var line_ct = 0;
 	var match = false;
 
-	while(l = readline()) {
+	while(true) {
+            l = readline();
+            debug(l);
+            if (l === "EOFEOFEOFEOFEOFEOFEOFEOFEOFEOF")
+                break;
+
+            if (l.match('^\\s*$')) // Blank line
+                continue;
+            if (l.match('#.*')) // Comment
+                continue;
+
 	    line_ct++;
 	    l_orig = l;
-//	    l = l.strip();
 	    
 	    opt = {};
 
@@ -118,6 +136,7 @@ var LadderParse = function() {
 	    // Now we can parse the start of the line as expected
 	    match = false;
 	    for (var r in handlers) {
+                debug(r);
 		if (m = l.match(r)) {
 		    handlers[r](json, m, opt);
 		    match = true;
