@@ -115,7 +115,7 @@ var LadderParse = function() {
             if (l === "EOFEOFEOFEOFEOFEOFEOFEOFEOFEOF")
                 break;
 
-            if (!l) // Blank line
+            if (l.match('^\\s*$')) // Blank line
                 continue;
             if (l.match('#.*')) // Comment
                 continue;
