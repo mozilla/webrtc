@@ -1,25 +1,6 @@
-{
-    "participants" : [
-        ["AJS","Alice JS"],
-        ["AB", "Alice Browser"],
-        ["BB", "Bob Browser"],
-        ["BJS", "Bob JS"]
-    ],
-    
-    "data" : [
-        [1, "AJS", "AB", "pc = new PeerConnection()"],
-        [1, "AB", "AJS", "onicechange( gathering )"],
-        [1, "BB", "BJS", "TEST", {
-            "duration" : 2,
-             "advance" : 0
-         }
-        ],
-        [1, "BJS", "BB", "TEST2", {
-             "duration" : 2
-         }
-        ],
-        [2, "BB", "AB", "More"]
-    ]
-}
-EOF
-
+participant Bob's JS as Bob
+participant Alice as Alice
+Bob -> Alice: Test
+here: Bob -> Alice: Test duration=2[duration=2]
+Alice@here -> Bob: Another test duration=1 [duration=1]
+Bob -> Alice: xxx
