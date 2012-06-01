@@ -1,0 +1,13 @@
+participant Alice's Turn as TurnA
+participant Alice's Browser as A
+participant Alice's App as AppA
+participant Alice as Alice
+participant Web Server Browse as Web
+participant Bob as Bob
+participant Bob's App as AppB
+participant Bob's Browse as B
+participant Bob's Turn as TurnB
+Bob -> Alice: Test
+here: Bob -> Alice: Test duration=2[duration=2]
+Alice@here -> Bob: Another test duration=1 [duration=1]
+Bob -> Alice: xxx
