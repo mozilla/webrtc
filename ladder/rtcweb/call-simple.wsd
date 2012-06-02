@@ -1,3 +1,6 @@
+title Simple Call Flow
+set autonumber true
+
 participant Alice's Turn as TurnA
 participant Alice's Browser as A
 participant Alice's App as AppA

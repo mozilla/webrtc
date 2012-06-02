@@ -1,3 +1,6 @@
+title Simple Hangout style flow
+set autonumber true
+
 participant Alice as Alice
 participant Alice's Browser as A
 participant Alice's App as App
@@ -10,7 +13,7 @@ App <-> Web: Authenticate
 Web <-> MCU: stuff
 Web -> App: Offer 
 App -> Alice: Check Hair
-Alice -> App: Hair if fluffy 
+Alice -> App: Hair is fluffy 
 
 App -> A: create PeerConnection()
 A -> Turn: Alloc

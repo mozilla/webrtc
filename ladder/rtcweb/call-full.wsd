@@ -1,3 +1,6 @@
+title Call showing all callback - this is far from complete 
+set autonumber true
+
 participant Alice's Turn as TurnA
 participant Alice's Browser as A
 participant Alice's App as AppA

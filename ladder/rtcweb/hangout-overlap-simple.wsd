@@ -1,3 +1,6 @@
+title Simple hangout where media set is overlapped with hair check
+set autonumber true
+
 participant Alice as Alice
 participant Alice's Browser as A
 participant Alice's App as App
@@ -24,7 +27,7 @@ prStuff: Web -> MCU: stuff
 App@prAns -> Web@prStuff: answer 
 A <-> MCU: DTLS
 A <-> MCU: SRTP
-Alice -> App: Hair if fluffy 
+Alice -> App: Hair is fluffy 
 App -> A: addStream audio/video
 App -> A: createAnswer
 A -> App: answer
