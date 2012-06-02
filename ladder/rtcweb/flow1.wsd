@@ -1,0 +1,30 @@
+title CULLEN'S AWESOME DIAGRAM
+set autonumber true
+set time_height 20
+set column_width 150
+participant Alice's Turn as TurnA
+participant Alice's Browser as A
+participant Alice's App as AppA
+participant Alice as Alice
+participant Web Server Browse as Web
+participant Bob as Bob
+participant Bob's App as AppB
+participant Bob's Browse as B
+participant Bob's Turn as TurnB
+A <-> Web: Load Page 
+A <-> Web: Authenticate
+AppA -> A: create PeerConnection()
+A -> TurnA: Alloc
+TurnA -> A: 
+
+ 
+B <-> Web: Load Page 
+B <-> Web: Authenticate
+AppB -> B: create PeerConnection()
+B -> TurnB: Alloc [color=red]
+TurnA -> B: 
+
+Alice -> AppA: Call Bob 
+AppA -> A: addStream( data )
+AppA -> A: addStream( audio/video )
+

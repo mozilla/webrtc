@@ -6,10 +6,13 @@ var ADVANCE = 'ADVANCE';
 var Ladder = function() {
     var timepoints = {};
     var participants = [];
+    var desc_;
+    var title = "";
     var arrows = [];
     var column_width = 150;
     var time_height = 20;
     var current_time = 0;
+    var current_arrow = 0;
     var arrow_head_length = 7;
     var label_space_x = 3;
     var label_space_y = -3;
@@ -135,6 +138,10 @@ var Ladder = function() {
         
         flags.double_headed = double_headed;
         
+        if (desc_.autonumber === "true") {
+            current_arrow ++;
+            label = "" + current_arrow + ". " + label;
+        }
         arrows.push({
                         start : start,
                         end:end,
@@ -161,13 +168,23 @@ var Ladder = function() {
         var label;
         var flags;
         
+        desc_ = deep_copy(desc);
         debug("Computing ladder");
+        debug(JSON.stringify(desc));
+        if (desc.title) {
+            title = desc.title;  
+            debug('title = ' + title);
+        };
+
+	if (desc.column_width)
+	    column_width = desc.column_width;
+	if (desc.time_height)
+	    time_height = desc.time_height;
+
         if (desc.participants) {
             participants = deep_copy(desc.participants);
         }
 
-        //  console.log(desc);
-        
         desc.data.forEach(function(x) {
                    // First value is the type
                    if (x[0] === ARROW) {
@@ -200,24 +217,25 @@ var Ladder = function() {
         return ' transform="rotate(' + angle + ', ' + x + ', ' + y + ')" ';
     };
 
-    var arrow_head = function(angle, p, direction) {
+    var arrow_head = function(angle, p, direction, color) {
         var result = '';
         var xoffset = arrow_head_length * direction;
         
         result += '<line ' + p.str(1) + p.adjust(xoffset, -1 * arrow_head_length).str(2)
-            + draw_rotate_attr(angle, p.x, p.y) + ' width="1" ' + ' stroke="black"/>';
+            + draw_rotate_attr(angle, p.x, p.y) + ' width="1" ' + ' stroke="' + color + '"/>';
         result += '<line ' + p.str(1) + p.adjust(xoffset, 1 * arrow_head_length).str(2) 
-            + draw_rotate_attr(angle, p.x, p.y) + ' width="1" ' + ' stroke="black"/>';
+            + draw_rotate_attr(angle, p.x, p.y) + ' width="1" ' + ' stroke="' + color + '"/>';
         return result;
     };
 
-    var draw_arrow = function(c1, t1, c2, t2, str, double_headed) {
+    var draw_arrow = function(c1, t1, c2, t2, str, double_headed, color) {
         var left;
         var right;
         var text_anchor;
         var text_align;
         var l2r = false;
         var result = "";
+        color = color || "black";
 
         var angle;
 
@@ -229,7 +247,7 @@ var Ladder = function() {
         result += '<line ' 
             + pos(c1, t1).str(1)
             + pos(c2, t2).str(2) + 
-            'width = "1" stroke="black"/>\n';
+            'width = "1" stroke="' +color + '"/>\n';
 
         // Put into L -> R form        
         if (c2 > c1) {
@@ -251,17 +269,18 @@ var Ladder = function() {
         }
         
         if (l2r || double_headed) {
-            result += arrow_head(angle, right, -1);
+            result += arrow_head(angle, right, -1, color);
         };
         
         if (!l2r || double_headed) {
-            result += arrow_head(angle, left, 1);
+            result += arrow_head(angle, left, 1, color);
         }
         
         if (str) {
             result += '<text ' + text_anchor.str() + 
                 ' text-anchor="' + text_align + '" ';
             result += draw_rotate_attr(angle, text_anchor.x, text_anchor.y) +
+               ' fill = "' + color + '" ' +
                 '>' + 
                 str + "</text>\n";
         }
@@ -280,7 +299,12 @@ var Ladder = function() {
         var height =  timey(max_time + 5);
         
         var result = '<svg baseProfile="full" xmlns="http://www.w3.org/2000/svg" width="' + width + '" height="' + height + '">\n';
-        
+
+        if (title) {
+            debug("Drawing title");
+            result += draw_label(participants.length/2, -4, title);
+        };
+
         participants.forEach(function(x, col) {
                    result += draw_label(col, -3, x[1]);
                    result += draw_line(col, -2, col, max_time + 1);
@@ -289,11 +313,12 @@ var Ladder = function() {
 
         arrows.forEach(function(x) {
                   result += draw_arrow(x.start.column,
-                                  x.start.time,
-                                  x.end.column,
-                                  x.end.time,
-                                  x.label,
-                                  x.flags.double_headed);
+                                       x.start.time,
+                                       x.end.column,
+                                       x.end.time,
+                                       x.label,
+                                       x.flags.double_headed,
+                                       x.flags.color);
                });
         
         result += '</svg>';

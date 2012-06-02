@@ -5,10 +5,11 @@
  *  
  * Current syntax:
  * 
+ * 'title' <title>
  * 'participant' <participant-name> 'as' <participant-handle>
  * <participant-handle> [->|<->] <participant-handle> ':' <message>  [ <options> ]
  * 'advance' <number>
- * 
+ * 'set' <variable> <value>
  * <options> ::= '[' <option> [ '=' <value>], ... ']' ]
  * 
  */
@@ -28,6 +29,7 @@ var debug = function(msg) {
 // Maybe something cooler than regexps would be cool here.
 // I miss yacc.
 var LadderParse = function() {
+    var title_re = '^title\\s+(.*)';
     var identifier_re = '[A-Za-z0-9_\\- \\(\\)@]+';
     var words_re = '[^\\[\\]]+';
     var timepoint_re = '(([A-Za-z0-9]+)\s*:)?';
@@ -35,7 +37,7 @@ var LadderParse = function() {
     var participant_re = '^participant\\s+(' + words_re + ')\\s+as\\s+(' + identifier_re + ')';
     var arrow_re = '^' + timepoint_re + '\\s*(' + identifier_re + ')\\s*(<?->)\\s*(' + identifier_re + ')\\s*:\\s*(' + words_re + ')';
     var advance_re = '^advance\\s+(\\d+)';
-    
+    var set_re = '^set\\s+([A-Za-z0-9\\-_]+)\\s+(\\S.*)';
     var handlers = {
     };
 
@@ -78,6 +80,20 @@ var LadderParse = function() {
         json.data.push([ADVANCE, 2]);
     };
     handlers[advance_re] = parse_advance;
+
+    var parse_title = function(json, m, o) {
+        if (json.title) {
+            die("Title already specified as: " + json.title);
+        };
+
+        json.title = m[1];
+    };
+    handlers[title_re] = parse_title;
+
+    var parse_set = function(json, m, o) {
+      json[m[1]] = m[2].trim();
+    };
+    handlers[set_re] = parse_set;
 
     var parse_options = function(opts) {
 	// Options are a sequence of comma-separated values, with optional
