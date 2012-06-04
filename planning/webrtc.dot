@@ -55,14 +55,12 @@ node [shape=plaintext, fontsize=16]; /* the time-line graph */
 	   dtlsfingerprint [ label = "DTLS Fingerprint\n(SDP)\nEKR & Suhas"];
 	   iceparams [label = "ICE (SDP)\nEKR & Suhas"];
            sipccjsep [ label = "JSEP calls without MediaStream input in SIPCC\nEnda"];
-           sipccmediastreams [label ="Abstract MediaStreams\nSuhas"];
 	}
 
 	nicer -> icetransport
 	genericio -> icetransport
 	iceparams -> icetransport
         sipccsdp -> sipccjsep
-        sipccsdp -> sipccmediastreams
 
 	{rank = same; "June 15";
 	   constraints [label = "Constraints API\nAnant/Suhas"];
@@ -76,9 +74,8 @@ node [shape=plaintext, fontsize=16]; /* the time-line graph */
 	dtlstransport -> transport
 	icetransport -> transport
 	sipccjsep -> sipccjsepmediastreams
-	sipccmediastreams -> sipccjsepmediastreams
 	getusermedia -> sipccmediaengine
-        sipccmediastreams -> sipccmediaengine
+        sipccsdp -> sipccmediaengine
 
         {rank = same; "June 22"; 
 	  JSEP [ label = "JSEP working\nEthan\nRollup bugfix"]; 
