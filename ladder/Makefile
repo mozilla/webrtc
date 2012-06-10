@@ -9,7 +9,7 @@ clean:
 	- rm -f *.svg *.png
 
 %.svg: %.wsd
-	cat $^ EOF.txt | $(JS) run.js > $@
+	node run.js $^ $@
 
 %.png: %.svg
 	java -jar batik-rasterizer.jar $^ -d $@ -bg 255.255.255.255
