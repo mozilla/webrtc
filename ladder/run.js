@@ -1,32 +1,21 @@
 var parse_json = false;
 
-load( "ladder-diagram.js" );
-load( "ladder-parser.js");
+var Ladder = require( './ladder-diagram' );
+var LadderParse = require( './ladder-parser');
+var fs = require('fs');
+var data, parsed, output;
 
-var data;
-
-if (parse_json) {
-    // Load the file from stdin 
-    var numLines = 0;
-    var lines = new Array();
-    do {
-	lines[ numLines ] = readline();
-	if ( lines[ numLines ] === "EOF" ) {
-            lines.pop();
-            break;
-	}
-	numLines++;
-    } while ( true );
-
-    data = JSON.parse( lines.join(' ') );
-}
-else {
-    data = LadderParse.parse();
+if (process.argv[2] === '-d') {
+    require('./debug').enable();
+    process.argv.shift();
 }
 
-Ladder.compute_ladder(data);
-result = Ladder.draw_ladder();
-
-print( result );
-
-
+data = fs.readFileSync(process.argv[2], 'utf8');
+parsed = LadderParse.parse(data);
+Ladder.compute_ladder(parsed);
+output = Ladder.draw_ladder();
+if (process.argv[3]) {
+    fs.writeFileSync(process.argv[3], output);
+} else {
+    console.log(output);
+}
