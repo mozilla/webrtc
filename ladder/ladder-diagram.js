@@ -1,3 +1,5 @@
+'use strict';
+var debug = require('./debug');
 var ARROW = 'ARROW';
 var DARROW = 'DARROW';
 var NOTE = 'NOTE';
@@ -18,7 +20,7 @@ var Ladder = function() {
     var label_space_y = -3;
 
     var max_time = 0;
-    var paper = undefined;
+    var paper;
     
     var deep_copy = function(a) {
       return JSON.parse(JSON.stringify(a));
@@ -26,7 +28,7 @@ var Ladder = function() {
 
     var participant_index = function(p) {
         for (var i=0; i<participants.length; i++) {
-            if (participants[i][0] == p) {
+            if (participants[i][0] === p) {
                 return i;
             }
         }
@@ -333,7 +335,12 @@ var Ladder = function() {
 
     return {
         compute_ladder : compute_ladder,
-        draw_ladder : draw_ladder
+        draw_ladder : draw_ladder,
+	ARROW : ARROW,
+DARROW : DARROW,
+NOTE: NOTE,
+ADVANCE: ADVANCE
     };
 }();
+module.exports = Ladder;
 
