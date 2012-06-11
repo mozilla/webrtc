@@ -9,7 +9,7 @@ var debug = function(msg) {
 
 debug.die = function(msg) {
     console.error("ERROR: " + msg);
-    throw msg;
+    process.exit(1);
 };
 
 debug.enable = function() {
