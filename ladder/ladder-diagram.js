@@ -11,7 +11,7 @@ var Ladder = function() {
     var arrows = [];
     var column_width = 150;
     var time_height = 20;
-    var current_time = 0;
+    var current_time = 1;
     var current_arrow = 0;
     var arrow_head_length = 7;
     var label_space_x = 3;
@@ -62,6 +62,8 @@ var Ladder = function() {
         var time = null;
         var tmp;
         var timepoint;
+
+        debug("Endpoint = " + endpoint);
         
         endpoint = endpoint.trim();
         var m = endpoint.match(endpoint_re);
@@ -74,12 +76,14 @@ var Ladder = function() {
         
         // is there a time?
         if (m[3]) {
+            debug("Endpoint timepoint = " + m[3]);
             // First see if it is an integer
             tmp = parseInt(m[3], 10);
             if (!isNaN(tmp)) {
                 time = tmp;
             }
             else {
+                debug("Looking up timepoint " + m[3]);
                 timepoint = m[3];
                 // It must be a timepoint
                 debug(JSON.stringify(timepoints));
