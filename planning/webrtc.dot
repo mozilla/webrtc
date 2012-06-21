@@ -45,7 +45,6 @@ node [shape=plaintext, fontsize=16]; /* the time-line graph */
 	getusermedia_DOM -> peerconnection_first
 
 	{rank = same; "June 8";
-	   webrtc [label = "base WebRTC landed on m-c\nRandell"];
 	   icetransport [ label = "ICE Transport\nEKR"];
 	   sctpio [ label = "Abstract SCTP I/O\nEKR w/ SCTP Authors"]
 	   dtlsfingerprint [ label = "DTLS Fingerprint\n(SDP)\nEKR & Suhas"];
@@ -59,11 +58,10 @@ node [shape=plaintext, fontsize=16]; /* the time-line graph */
         sipccsdp -> sipccjsep
 
 	{rank = same; "June 15";
-	   constraints [label = "Constraints API\nAnant/Suhas"];
+	   webrtc [label = "base WebRTC landed on m-c\nRandell" color=green];
 	   transport [label = "Transport Service\nEKR"];
-           sipccjsepmediastreams [label = "JSEP using MediaStreams in SIPCC\nEnda"];
-           sipccmediaengine [label = "Media Engine Interface available from MediaStream\nSuhas"];
 	} 
+	mediastream -> webrtc;
 	getusermedia_DOM -> constraints;
 	getusermedia -> constraints;
 	dtlstransport -> transport
@@ -73,9 +71,8 @@ node [shape=plaintext, fontsize=16]; /* the time-line graph */
         sipccsdp -> sipccmediaengine
 
         {rank = same; "June 22"; 
-	  JSEP [ label = "JSEP working\nEthan\nRollup bugfix"]; 
-          sipccmediaconstraints [ label = "Add Media Constraints to SIPCC\nSuhas"]; 
-          sipccmultipeerconn [label = "SIPCC handles multiple PeerConnections\nEthan"];
+           sipccjsepmediastreams [label = "JSEP using MediaStreams in SIPCC\nEnda"];
+           sipccmediaengine [label = "Media Engine Interface available from MediaStream\nSuhas"];
           opuswebrtc [label = "Opus patches for WebRTC.org\nRillian"];
           getusermedia_video [label = "getUserMedia w/ video\nSuhas"]
           sctp_library [label = "libsctp\nRandell"];
@@ -88,12 +85,17 @@ node [shape=plaintext, fontsize=16]; /* the time-line graph */
 	webrtc -> getusermedia_video
 
         {rank = same; "June 29"; 
+	  JSEP [ label = "JSEP working\nEthan\nRollup bugfix"]; 
+          sipccmultipeerconn [label = "SIPCC handles multiple PeerConnections\nEthan"];
 	   datachannel [label = "Full DataChannel\nRandell"];
-	   srtp [label = "SRTP (with DTLS)\nEKR"] 
-	   sipccrefactor [label = "SIPCC refactored (milestone)\nMaire"];
-	   peerconnection_first [label = "partial PeerConnection\nEnda/Randell"];
 	   opus [ label = "Functional Opus calls\nRillian"];
 	}
+
+        {rank = same; "July 6"; 
+	   peerconnection_first [label = "partial PeerConnection\nEnda/Randell"];
+	   sipccrefactor [label = "SIPCC refactored (milestone)\nMaire"];
+	}
+
         dtlsfingerprint -> srtp
 	dtlssrtp -> srtp
 	JSEP -> srtp
@@ -103,16 +105,20 @@ node [shape=plaintext, fontsize=16]; /* the time-line graph */
 	opuswebrtc -> opus
 
         {rank = same; "July 13"; 
+	   srtp [label = "SRTP (with DTLS)\nEKR"] 
 	   peerconnection [label = "PeerConnection API\nEnda/Randell"];
 	}
 	peerconnection_first -> peerconnection
-        sipccmediaconstraints -> peerconnection
         sipccmultipeerconn -> peerconnection
 
         {rank = same; "July 20"; 
+	   constraints [label = "Constraints API\nAnant/Suhas"];
 	   working [ label = "Working System (milestone)\nMaire" ] 
 	}
-	
+
+        {rank = same; "July 27"; 
+          sipccmediaconstraints [ label = "Add Media Constraints to SIPCC\nSuhas"]; 
+	}
 
 	transport -> working
 	transport -> datachannel
@@ -125,7 +131,7 @@ node [shape=plaintext, fontsize=16]; /* the time-line graph */
 	transport -> sctp_library
 	datachannel -> working
 	srtp -> working
-	constraints->working
 	opus -> working
 	sipccrefactor -> working
+	getusermedia_video -> working
 }
