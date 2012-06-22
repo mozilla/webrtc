@@ -1,4 +1,9 @@
 digraph G {
+labelloc="b";
+fontsize=30;
+style=bold;
+label="Note: a “bubble” or object turns green when implementation is completed; in most cases this means when it lands on Alder"
+
 ranksep=.75; size = "7.5,7.5";
 {
 node [shape=plaintext, fontsize=16]; /* the time-line graph */ 
@@ -134,4 +139,5 @@ node [shape=plaintext, fontsize=16]; /* the time-line graph */
 	opus -> working
 	sipccrefactor -> working
 	getusermedia_video -> working
+
 }
