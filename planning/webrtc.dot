@@ -16,7 +16,7 @@ node [shape=plaintext, fontsize=16]; /* the time-line graph */
         
         {
            rank = same; "May 4";
-	   genericio [label = "Generic Networking abstraction\nEKR"]
+	   genericio [label = "Generic Networking abstraction\nEKR", color=green]
 	   dtlssrtp [label = "DTLS-SRTP (NSS) landed (where?)\nEKR" color=green]
         }
 
@@ -33,7 +33,7 @@ node [shape=plaintext, fontsize=16]; /* the time-line graph */
 	
 	{rank = same; "May 25";
 	   getusermedia_abstract [label = "getUserMedia abstraction\nAnant" color=green]
-	   nicer [label = "Import ICE stack\nEKR"];
+	   nicer [label = "Import ICE stack\nEKR", color=green];
 	   sipccsdp [ label = "Start SIPCC quickly in SDP Mode\nEnda" color=green];
         }	   	   
 	getusermedia_abstract->getusermedia_DOM
@@ -50,10 +50,10 @@ node [shape=plaintext, fontsize=16]; /* the time-line graph */
 	getusermedia_DOM -> peerconnection_first
 
 	{rank = same; "June 8";
-	   icetransport [ label = "ICE Transport\nEKR"];
+	   icetransport [ label = "ICE Transport\nEKR", color=green];
 	   sctpio [ label = "Abstract SCTP I/O\nEKR w/ SCTP Authors"]
 	   dtlsfingerprint [ label = "DTLS Fingerprint\n(SDP)\nEKR & Suhas"];
-	   iceparams [label = "ICE (SDP)\nEKR & Suhas"];
+	   iceparams [label = "ICE (SDP)\nEKR & Suhas", color=green];
            sipccjsep [ label = "JSEP calls without MediaStream input in SIPCC\nEnda"];
 	}
 
@@ -64,7 +64,7 @@ node [shape=plaintext, fontsize=16]; /* the time-line graph */
 
 	{rank = same; "June 15";
 	   webrtc [label = "base WebRTC landed on m-c\nRandell" color=green];
-	   transport [label = "Transport Service\nEKR"];
+	   transport [label = "Transport Service\nEKR", color=green];
 	} 
 	mediastream -> webrtc;
 	getusermedia_DOM -> constraints;
