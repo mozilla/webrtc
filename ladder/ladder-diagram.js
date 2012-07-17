@@ -312,8 +312,8 @@ var Ladder = function() {
         };
 
         participants.forEach(function(x, col) {
-                   result += draw_label(col, -3, x[1]);
-                   result += draw_line(col, -2, col, max_time + 1);
+                   result += draw_label(col, -2, x[1]);
+                   result += draw_line(col, -1, col, max_time + 1);
                    result += draw_label(col, max_time + 3, x[1]);
                });
 
