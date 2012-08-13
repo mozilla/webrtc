@@ -58,14 +58,16 @@ Stability
   and exit without crashing [all]
 
 If we do the above, we will have something that people could at least
-download, play with, and demo.
+download, play with, and demo. Also, we can't interoperate with 
+Chrome without some of this stuff working.
 
 
 PRIORITY 1: SPECIFICATION COMPLIANCE
 Our second objective should be specification compliance. Obviously
 this is something of a work-in-progress and interacts with interop
 (below), but there are a number of known points of nonconformance
-which we need to address. 
+which we need to address. Note, I have marked items which I expect
+to be real interop issues with Chrome with ** below.
 
 These generally fall into two categories:
 
@@ -82,13 +84,13 @@ JSEP
 
 - Implement bundle [ehugg, emannion, (ekr for transport piece?)]
 
-- Make sure that the VP8 and Opus SDP is correct [emannion]
+- Make sure that the VP8 and Opus SDP is correct [emannion] **
 
 - Implement/spec SDP for DataChannels [jesup, emannion]
 
 - Implement hints [emannion, ehugg]
 
-- Decide on/implement some SDP modifications [ehugg, emannion]
+- Decide on/implement some SDP modifications [ehugg, emannion] **
 
 - Allow audio w/o video, unidirection audio/video [emannion, ehugg]
 
@@ -98,7 +100,7 @@ JSEP
 Media Transport
 - SSRC filtering for bundle [crypt, ekr]
 
-- Receive trickle ICE [ekr, emannion]
+- Receive trickle ICE [ekr, emannion] **
 
 - Send trickle ICE (lower priority) [ekr, emannion]
 
@@ -120,7 +122,30 @@ Identity
 
 
 PRIORITY 2: INTEROPERABILITY WITH CHROME
-As noted above, fixing noncompliance is intertwined with 
+As noted above, fixing noncompliance is intertwined with interop
+testing with Chrome. However, we can start doing interop testing as
+soon as we have fixed the really high order specification compliance
+issues.
+
+The plan for interop testing is still evolving, but my thought was
+to have two levels of testing:
+
+- A command line test in the mode of peerconnection_client
+- End-to-end browser tests
+
+The first of these is harder to stand up but better for debugging.
+The second is good for a demo and easy to stand up, especially since
+we need a roughly equivalent JS test harness for testing our own
+browser-to-browser mode. I am working on the command line version
+but we may start browser-to-browser testing first.
+
+
+
+
+
+
+
+
 
 
 
