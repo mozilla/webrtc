@@ -1,0 +1,146 @@
+Subject: Status of WebRTC implementation/Project Planning
+
+Now that IETF is over, I wanted to try to write down where I think
+things stand and what needs to be done in the short-to-medium term.
+
+
+CURRENT STATUS
+We have basic calling functionality working in a standalone mode
+within one browser, and it's probably a day or two of effort away from
+working between browsers. This includes support for:
+
+- JSEP signaling
+- Audio and video
+- ICE/STUN (but not TURN)
+- DTLS-SRTP at the transport layer (but not yet signaling)
+- Prototype identity integration
+- DataChannels (but not over the ICE/DTLS channel)
+
+Our objective is to have a compliant, partially interoperable
+implementation in m-c by the time Chrome ships with WebRTC in around
+12 weeks from today (release M23) and to have a publicly deployed
+version by end-of-year. The first step in this process is to
+have a plausible, compliant implementation at all. The remainder
+of this message is focused on that.
+
+
+PRIORITY 0: MINIMAL FUNCTIONALITY
+The first priority is to finish the functionality that is indicated
+as partly finished above. This comprises the following tasks.
+
+Overall
+- Verify that a call between two endpoints on different machines
+  works. Fix as necessary. [ekr, anant]
+
+JSEP
+- Wire up DTLS-SRTP fingerprints to the SDP
+  [ekr, emannion]
+
+- Allow some minimal variation in the SDP. At minimum this means
+  ignoring new identity attributes added by Anant.
+  [emannion, ehugg, w/ ekr, fluffy]
+
+Media
+- Remove the video time distortion (video now seems to play out
+  at a very slow rate). This appears to be a result of the
+  advertised frame rate for the source media stream.
+  [crypt, ekr; bug 782299]
+
+Data Channels
+- Move data channels to run over ICE/DTLS [jesup]
+
+Identity    
+- Real in-chrome dialog for relying party [anant]
+- Wire up identity to DTLS-SRTP fingerprint checks [ekr]
+
+Stability
+- Make sure the system can run multiple calls, stop and start,
+  and exit without crashing [all]
+
+If we do the above, we will have something that people could at least
+download, play with, and demo.
+
+
+PRIORITY 1: SPECIFICATION COMPLIANCE
+Our second objective should be specification compliance. Obviously
+this is something of a work-in-progress and interacts with interop
+(below), but there are a number of known points of nonconformance
+which we need to address. 
+
+These generally fall into two categories:
+
+1. Places where we are noncompliant with everything (e.g., we
+   advertise rtcp-mux but don't do it.)
+2. Implement stuff we are required to (or at least really should)
+   implement by WebRTC but don't (e.g., bundle).
+
+The ones that come immediately to mind are listed below.
+
+JSEP
+- Implement rtcp-mux. Currently, we have support for this in the
+  SDP but it's not implemented in the transport layer. [ekr, emannion]
+
+- Implement bundle [ehugg, emannion, (ekr for transport piece?)]
+
+- Make sure that the VP8 and Opus SDP is correct [emannion]
+
+- Implement/spec SDP for DataChannels [jesup, emannion]
+
+- Implement hints [emannion, ehugg]
+
+- Decide on/implement some SDP modifications [ehugg, emannion]
+
+- Allow audio w/o video, unidirection audio/video [emannion, ehugg]
+
+- Allow >1 of each type of media stream [emannion, ehugg, crypt, ekr]
+
+
+Media Transport
+- SSRC filtering for bundle [crypt, ekr]
+
+- Receive trickle ICE [ekr, emannion]
+
+- Send trickle ICE (lower priority) [ekr, emannion]
+
+- Implement per-flow STUN configuration [anant, ekr]
+
+- Implement/wire up TURN. This is already in nICEr but may be
+  obsolete/broken [ekr]
+
+Media
+- Implement Opus [derf, rillian]
+
+- Wire up all codecs in VCM [crypt]
+
+- Audio/video synchronization [crypt]
+
+
+Identity
+- Implement generic identity [ekr, anant]
+
+
+PRIORITY 2: INTEROPERABILITY WITH CHROME
+As noted above, fixing noncompliance is intertwined with 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
