@@ -2,7 +2,9 @@ Subject: Status of WebRTC implementation/Project Planning
 
 On the last call, I promised to write up where I thought the state
 of the implementation was and what the likely next steps were.
-This is that writeup.
+This is that writeup. Please let me know if there is stuff on here
+that seems wrong. Note that the task assignments below are based
+on what people seem to be working on. They could be wrong too.
 
 CURRENT STATUS
 We have basic calling functionality working in a standalone mode
