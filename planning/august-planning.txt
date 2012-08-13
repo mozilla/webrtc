@@ -1,8 +1,8 @@
 Subject: Status of WebRTC implementation/Project Planning
 
-Now that IETF is over, I wanted to try to write down where I think
-things stand and what needs to be done in the short-to-medium term.
-
+On the last call, I promised to write up where I thought the state
+of the implementation was and what the likely next steps were.
+This is that writeup.
 
 CURRENT STATUS
 We have basic calling functionality working in a standalone mode
