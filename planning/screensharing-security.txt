@@ -1,0 +1,146 @@
+From: EKR
+Subject: Notes on security for browser-based screen/application sharing
+
+1. INTRODUCTION
+WebRTC [0][1] already contains facilities for JavaScript applications
+to acquire to the user's camera and microphone and either to directly
+access the media or to send it elsewhere over a voice/video call.
+This obviously presents security issues [2][3] and the consensus
+approach is that any access to camera or microphone must only occur
+with user consent. Current versions of Chrome obtain this consent once
+and persist it indefinitely for a given site. Firefox obtains consent
+for every request but will likely eventually add a persistent consent
+feature.
+
+One of the major applications of WebRTC-style technology is
+videoconferencing and most videoconferencing applications offer either
+"screen sharing" or "application sharing" or both. Unfortunately,
+while the security properties of camera/microphone access are fairly
+obvious to the user--though the properties of persistent permissions
+may not be--the security properties of screen/application sharing are
+far less obvious. It has been suggest by Adam Barth among others that
+permissions should be stricter for screen sharing than for
+camera/microphone access. This note provides an overview of the
+relevant security issues and of the potential permissions/consent
+mechanisms.
+
+
+2. GENERAL SECURITY PROPERTIES OF SCREEN/APPLICATION SHARING
+Technically, screen/application sharing is relatively simple. In
+screen sharing, the conference sees whatever is on the user's display;
+if there are multiple monitors, typically only one is shared. In
+application sharing, the conference gets access to all the windows in
+an application.
+
+Because existing conferening products (e.g., WebEx) require some sort
+of download/install experience, they end up with the permissions of a
+native application. Thus, it doesn't really make sense to worry about
+misuse of the sharing permissions specifically because the application
+has free run of the user's machine. The security question then becomes
+whether the user wishes to run the application at all, not whether he
+trusts the application to see his screen specifically.
+
+Even so, there are known security risks to this type of sharing,
+mostly due to the user's misunderstanding/lack of thought about
+the security properties. For instance:
+
+* The desktop often contains icons that the user has forgotten
+  about, including the names of files. These themselves can
+  be confidential.
+
+* Desktop notifications such as Growl for incoming messages,
+  IMs, etc. can be get shared. These can also contain confidential
+  information.
+
+* Users often think of "application sharing" as "window sharing"
+  and will have other sensitive documents open at the same
+  time as the document they intend to be sharing. 
+
+I have heard reports of all of these issues (the first two are also
+often seen in settings when the user is projecting their screen at
+conferences and the like). Fundamentally, these are examples of user
+error, though possibly combined with confusing interfaces. The users
+generally understand that they have given the downloaded application
+wide permissions. Because users' expectation for Web applications are
+that they are safer, there is yet more space for confusion.
+    
+
+3. SECURITY OF SCREEN/APPLICATION SHARING IN THE WEB ENVIRONMENT
+3.1. Threat Model
+Huang et al.[4] describe the Web security guarantee as:
+
+   Users can safely visit arbitrary web sites and execute scripts
+   provided by those sites.
+
+More generally, users expect that the browser will protect them
+from malicious sites and that sites are isolated from each other.
+(More on the technical mechanisms below).
+
+Obviously, granting permission to see the desktop breaches
+this guarantee to some extent, since the user is granting the
+site (via the browser) some very dangerous capabilities. Generally
+the intent is that the user can understand the security impact
+of the permission he is granting. As should be clear from the
+discussion above, this is already not entirely so. However,
+in the Web environment the problem is much worse because the
+user likely thinks that he is assuming *just* the screen/application
+sharing risks without the corresponding "full application privileges"
+risks. This is unfortunately less true than one would like.
+
+
+3.2. Background: Same Origin Policy
+In order to isolate sites from each other, browsers implement what's
+called the "Same Origin Policy" (SOP). The basic idea is that content
+(scripts, HTML, etc.) that runs on one site cannot get access to
+content from another site, except under very limited conditions.
+For instance, site A can:
+
+- Run scripts from site B.
+- IFRAME HTML from site B but not look at the content or output.
+- Display images and videos from site B but not examine their
+  contents.
+
+Note: I am ignoring CORS and WebSockets for the moment.
+
+The basic idiom here is that site A can cause content from site B to
+be *displayed* but it can't access the content itself. This allows for
+the construction of some kinds of composite Web sites (i.e., mash-ups)
+but still allows for site isolation.
+
+Many important Web security mechanisms depend explicitly on these
+guarantees. For instance, consider a Web mail site which bases its
+authentication on cookies and will therefore service any HTTP
+request which contains the right cookie. Content from any other site
+can cause the browser to emit the right HTTP request, but because
+of the same-origin policy, it can't see the responses. This prevents
+random sites from accessing your web mail. 
+
+
+3.3. Web-Specific Risks
+At this point, the risk of combining screen sharing with the Web
+environment should be obvious. SOP protection depends on denying
+Web content access from site A to content from site B, but
+because site A can cause content from site B to be displayed
+on the screen, if A can see the user's screen then he can
+close the loop and bypass SOP.
+
+3.3.1. SOP Violations for Visible Content
+3.3.2. SOP Violations for "Hidden" Content
+3.3.3. Local file access
+
+4. CONSENT/PERMISSIONS OPTIONS
+
+
+
+
+
+
+
+[0] http://dev.w3.org/2011/webrtc/editor/webrtc.html
+[1] http://dev.w3.org/2011/webrtc/editor/getusermedia.html
+[2] http://tools.ietf.org/html/draft-ietf-rtcweb-security
+[3] http://tools.ietf.org/html/draft-ietf-rtcweb-security-arch
+[4] http://w2spconf.com/2011/papers/websocket.pdf
+
+
+
