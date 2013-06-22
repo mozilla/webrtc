@@ -302,9 +302,9 @@
   </task>
   <task id="t32">
     <title>Negotiate acceptable video parameters</title>
-    <leveled-start>2013-06-27T00:00:00.000Z</leveled-start>
+    <leveled-start>2013-06-20T15:00:00.000Z</leveled-start>
     <effort>288000</effort>
-    <assignment idref="r12"/>
+    <assignment idref="r19"/>
   </task>
   <task id="t33">
     <title>Prototype hardware encoding</title>
@@ -354,13 +354,13 @@
   </task>
   <task id="t41">
     <title>ICE: handle dynamic network change</title>
-    <leveled-start>2013-06-20T15:00:00.000Z</leveled-start>
+    <leveled-start>2013-07-11T00:00:00.000Z</leveled-start>
     <effort>432000</effort>
     <assignment idref="r19"/>
   </task>
   <task id="t42">
     <title>Automatically set video from negotiated ranges</title>
-    <leveled-start>2013-07-11T15:00:00.000Z</leveled-start>
+    <leveled-start>2013-07-04T15:00:00.000Z</leveled-start>
     <effort>144000</effort>
     <prerequisite-task idref="t32"/>
     <assignment idref="r19"/>
