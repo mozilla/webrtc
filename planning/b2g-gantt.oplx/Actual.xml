@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<scenario xmlns="http://www.omnigroup.com/namespace/OmniPlan/v2" id="oNLcUU0qiOs">
+  <start-date>2013-06-20T07:00:00.000Z</start-date>
+  <granularity>days</granularity>
+  <prototype-task>
+    <task id="t4294967294">
+      <title>Task 1</title>
+      <effort>28800</effort>
+    </task>
+  </prototype-task>
+  <prototype-task>
+    <task id="t4294967293">
+      <title>Milestone 1</title>
+      <type>milestone</type>
+    </task>
+  </prototype-task>
+  <prototype-task>
+    <task id="t4294967292">
+      <title>Group 1</title>
+      <type>group</type>
+    </task>
+  </prototype-task>
+  <prototype-resource>
+    <resource id="r4294967294">
+      <name>Resource 1</name>
+      <type>Staff</type>
+    </resource>
+  </prototype-resource>
+  <prototype-resource>
+    <resource id="r4294967293">
+      <name>Equipment 1</name>
+      <type>Equipment</type>
+    </resource>
+  </prototype-resource>
+  <prototype-resource>
+    <resource id="r4294967292">
+      <name>Material 1</name>
+      <type>Material</type>
+      <units-available>0</units-available>
+      <efficiency>0</efficiency>
+    </resource>
+  </prototype-resource>
+  <prototype-resource>
+    <resource id="r4294967291">
+      <name>Group 1</name>
+      <type>Group</type>
+    </resource>
+  </prototype-resource>
+  <top-resource idref="r-1"/>
+  <resource id="r-1">
+    <type>Group</type>
+    <child-resource idref="r5"/>
+    <child-resource idref="r6"/>
+    <child-resource idref="r7"/>
+    <child-resource idref="r8"/>
+    <child-resource idref="r9"/>
+    <child-resource idref="r10"/>
+    <child-resource idref="r11"/>
+    <child-resource idref="r12"/>
+    <child-resource idref="r14"/>
+    <child-resource idref="r15"/>
+    <child-resource idref="r16"/>
+    <child-resource idref="r17"/>
+    <child-resource idref="r18"/>
+    <child-resource idref="r13"/>
+    <child-resource idref="r19"/>
+    <child-resource idref="r20"/>
+    <child-resource idref="r21"/>
+    <child-resource idref="r22"/>
+  </resource>
+  <resource id="r5">
+    <name>Randy</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r6">
+    <name>Shelly</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r7">
+    <name>Derf</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r8">
+    <name>Ben</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r9">
+    <name>JIB</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r10">
+    <name>Patrick</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r11">
+    <name>SC</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r12">
+    <name>ABR</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r13">
+    <name>UX</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r14">
+    <name>EKR</name>
+    <type>Staff</type>
+    <units-available>0.5</units-available>
+  </resource>
+  <resource id="r15">
+    <name>John</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r16">
+    <name>StevenLee</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r17">
+    <name>Jesup</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r18">
+    <name>Resource 1</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r19">
+    <name>ShianYow</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r20">
+    <name>Privacy team</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r21">
+    <name>Security</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r22">
+    <name>Resource 2</name>
+    <type>Staff</type>
+  </resource>
+  <top-task idref="t-1"/>
+  <task id="t-1">
+    <type>group</type>
+    <child-task idref="t5"/>
+    <child-task idref="t8"/>
+    <child-task idref="t7"/>
+    <child-task idref="t10"/>
+    <child-task idref="t11"/>
+    <child-task idref="t19"/>
+    <child-task idref="t17"/>
+    <child-task idref="t18"/>
+    <child-task idref="t20"/>
+    <child-task idref="t21"/>
+    <child-task idref="t22"/>
+    <child-task idref="t23"/>
+    <child-task idref="t24"/>
+    <child-task idref="t25"/>
+    <child-task idref="t27"/>
+    <child-task idref="t26"/>
+    <child-task idref="t29"/>
+    <child-task idref="t30"/>
+    <child-task idref="t31"/>
+    <child-task idref="t32"/>
+    <child-task idref="t42"/>
+    <child-task idref="t35"/>
+    <child-task idref="t36"/>
+    <child-task idref="t33"/>
+    <child-task idref="t28"/>
+    <child-task idref="t37"/>
+    <child-task idref="t38"/>
+    <child-task idref="t39"/>
+    <child-task idref="t40"/>
+    <child-task idref="t41"/>
+  </task>
+  <task id="t5">
+    <title>JS Media Recorder API</title>
+    <effort>0</effort>
+    <assignment idref="r5"/>
+  </task>
+  <task id="t7">
+    <title>(Native) Media Encoder Framework</title>
+    <effort>0</effort>
+    <assignment idref="r6"/>
+  </task>
+  <task id="t8">
+    <title>(Native) Opus Encoder</title>
+    <effort>0</effort>
+    <assignment idref="r6"/>
+  </task>
+  <task id="t10">
+    <title>Opus perf optimizations (recording)</title>
+    <leveled-start>2013-06-20T15:00:00.000Z</leveled-start>
+    <effort>576000</effort>
+    <assignment idref="r8"/>
+  </task>
+  <task id="t11">
+    <title>Design gUM permissions dialog</title>
+    <leveled-start>2013-06-20T15:00:00.000Z</leveled-start>
+    <effort>576000</effort>
+    <start-constraint-date>2013-06-20T15:00:00.000Z</start-constraint-date>
+    <assignment idref="r13"/>
+  </task>
+  <task id="t17">
+    <title>Implement gUM permissions dialog</title>
+    <effort>576000</effort>
+    <prerequisite-task idref="t11"/>
+  </task>
+  <task id="t18">
+    <title>App manifest properties for B2G permissions</title>
+    <effort>144000</effort>
+  </task>
+  <task id="t19">
+    <title>Privacy review for B2G</title>
+    <leveled-start>2013-07-18T15:00:00.000Z</leveled-start>
+    <effort>144000</effort>
+    <start-constraint-date>2013-06-19T23:45:00.000Z</start-constraint-date>
+    <prerequisite-task idref="t11"/>
+    <assignment idref="r20"/>
+  </task>
+  <task id="t20">
+    <title>Audio device module</title>
+    <leveled-start>2013-06-20T15:00:00.000Z</leveled-start>
+    <effort>230400</effort>
+    <assignment idref="r9"/>
+  </task>
+  <task id="t21">
+    <title>E10S: Interface prioritization</title>
+    <leveled-start>2013-06-20T15:00:00.000Z</leveled-start>
+    <effort>288000</effort>
+    <assignment idref="r10"/>
+  </task>
+  <task id="t22">
+    <title>E10S: UDP split functional</title>
+    <leveled-start>2013-06-20T15:00:00.000Z</leveled-start>
+    <effort>144000</effort>
+    <assignment idref="r11"/>
+  </task>
+  <task id="t23">
+    <title>E10S: UDP split performance</title>
+    <leveled-start>2013-06-27T15:00:00.000Z</leveled-start>
+    <effort>432000</effort>
+    <prerequisite-task idref="t22"/>
+    <assignment idref="r11"/>
+  </task>
+  <task id="t24">
+    <title>E10S: Packet filter</title>
+    <leveled-start>2013-07-04T00:00:00.000Z</leveled-start>
+    <effort>576000</effort>
+    <assignment idref="r10"/>
+  </task>
+  <task id="t25">
+    <title>E10S: Packet filter review</title>
+    <leveled-start>2013-08-01T15:00:00.000Z</leveled-start>
+    <effort>144000</effort>
+    <prerequisite-task idref="t24"/>
+    <assignment idref="r21"/>
+  </task>
+  <task id="t26">
+    <title>E10S: Video packet input</title>
+    <leveled-start>2013-08-30T15:00:00.000Z</leveled-start>
+    <effort>144000</effort>
+    <start-constraint-date>2013-07-17T23:30:00.000Z</start-constraint-date>
+    <prerequisite-task idref="t27"/>
+    <assignment idref="r11"/>
+  </task>
+  <task id="t27">
+    <title>E10S: Audio input</title>
+    <leveled-start>2013-08-02T15:00:00.000Z</leveled-start>
+    <effort>576000</effort>
+    <start-constraint-date>2013-08-01T17:00:00.000Z</start-constraint-date>
+    <assignment idref="r11"/>
+  </task>
+  <task id="t28">
+    <title>Improved perf benchmarks for A/V including microbenchmarks</title>
+    <leveled-start>2013-07-18T15:00:00.000Z</leveled-start>
+    <effort>288000</effort>
+    <start-constraint-date>2013-07-17T23:30:00.000Z</start-constraint-date>
+    <prerequisite-task idref="t33"/>
+    <assignment idref="r14" units="0.5"/>
+  </task>
+  <task id="t29">
+    <title>Signaling path latency tuning (500 ms stalls)</title>
+    <leveled-start>2013-06-20T15:00:00.000Z</leveled-start>
+    <effort>144000</effort>
+    <assignment idref="r12"/>
+  </task>
+  <task id="t30">
+    <title>Profile audio latency</title>
+    <leveled-start>2013-06-20T15:00:00.000Z</leveled-start>
+    <effort>432000</effort>
+    <assignment idref="r16"/>
+  </task>
+  <task id="t31">
+    <title>Profile video latency</title>
+    <leveled-start>2013-07-11T00:00:00.000Z</leveled-start>
+    <effort>432000</effort>
+    <start-constraint-date>2013-06-07T21:45:00.000Z</start-constraint-date>
+    <assignment idref="r16"/>
+  </task>
+  <task id="t32">
+    <title>Negotiate acceptable video parameters</title>
+    <leveled-start>2013-06-27T00:00:00.000Z</leveled-start>
+    <effort>288000</effort>
+    <assignment idref="r12"/>
+  </task>
+  <task id="t33">
+    <title>Prototype hardware encoding</title>
+    <leveled-start>2013-06-20T15:00:00.000Z</leveled-start>
+    <effort>288000</effort>
+    <start-constraint-date>2013-06-13T20:15:00.000Z</start-constraint-date>
+    <assignment idref="r14" units="0.5"/>
+  </task>
+  <task id="t35">
+    <title>Working C++ unit tests on automation</title>
+    <leveled-start>2013-06-20T15:00:00.000Z</leveled-start>
+    <effort>576000</effort>
+    <start-constraint-date>2013-06-14T15:00:00.000Z</start-constraint-date>
+    <assignment idref="r15"/>
+  </task>
+  <task id="t36">
+    <title>gUM mochitests on tbpl</title>
+    <leveled-start>2013-07-19T15:00:00.000Z</leveled-start>
+    <effort>576000</effort>
+    <start-constraint-date>2013-07-18T15:45:00.000Z</start-constraint-date>
+    <assignment idref="r15"/>
+  </task>
+  <task id="t37">
+    <title>Determine best parameters for acceptable responsiveness</title>
+    <leveled-start>2013-08-01T00:00:00.000Z</leveled-start>
+    <effort>288000</effort>
+    <start-constraint-date>2013-06-20T15:30:00.000Z</start-constraint-date>
+    <assignment idref="r16"/>
+  </task>
+  <task id="t38">
+    <title>Assess best-case video encoding complexity in software</title>
+    <leveled-start>2013-08-15T00:00:00.000Z</leveled-start>
+    <effort>576000</effort>
+    <assignment idref="r16"/>
+  </task>
+  <task id="t39">
+    <title>Assess best-case near-term audio encoding complexity</title>
+    <leveled-start>2013-09-12T00:00:00.000Z</leveled-start>
+    <effort>576000</effort>
+    <assignment idref="r16"/>
+  </task>
+  <task id="t40">
+    <title>Preliminary hardware encoding measurements</title>
+    <leveled-start>2013-10-10T00:00:00.000Z</leveled-start>
+    <effort>1152000</effort>
+    <assignment idref="r16"/>
+  </task>
+  <task id="t41">
+    <title>ICE: handle dynamic network change</title>
+    <leveled-start>2013-06-20T15:00:00.000Z</leveled-start>
+    <effort>432000</effort>
+    <assignment idref="r19"/>
+  </task>
+  <task id="t42">
+    <title>Automatically set video from negotiated ranges</title>
+    <leveled-start>2013-07-11T15:00:00.000Z</leveled-start>
+    <effort>144000</effort>
+    <prerequisite-task idref="t32"/>
+    <assignment idref="r19"/>
+  </task>
+  <critical-path root="-1" enabled="false" resources="false">
+    <color r="1" g="0.5" b="0.5"/>
+  </critical-path>
+</scenario>
