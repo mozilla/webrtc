@@ -1,0 +1,744 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<scenario xmlns="http://www.omnigroup.com/namespace/OmniPlan/v2" id="pQd8GVOJsft">
+  <start-date>2013-08-07T15:00:00.000Z</start-date>
+  <prototype-task>
+    <task id="t4294967294">
+      <title>Task 1</title>
+      <effort>28800</effort>
+    </task>
+  </prototype-task>
+  <prototype-task>
+    <task id="t4294967293">
+      <title>Milestone 1</title>
+      <type>milestone</type>
+    </task>
+  </prototype-task>
+  <prototype-task>
+    <task id="t4294967292">
+      <title>Group 1</title>
+      <type>group</type>
+    </task>
+  </prototype-task>
+  <prototype-resource>
+    <resource id="r4294967294">
+      <name>Resource 1</name>
+      <type>Staff</type>
+    </resource>
+  </prototype-resource>
+  <prototype-resource>
+    <resource id="r4294967293">
+      <name>Equipment 1</name>
+      <type>Equipment</type>
+    </resource>
+  </prototype-resource>
+  <prototype-resource>
+    <resource id="r4294967292">
+      <name>Material 1</name>
+      <type>Material</type>
+      <units-available>0</units-available>
+      <efficiency>0</efficiency>
+    </resource>
+  </prototype-resource>
+  <prototype-resource>
+    <resource id="r4294967291">
+      <name>Group 1</name>
+      <type>Group</type>
+    </resource>
+  </prototype-resource>
+  <top-resource idref="r-1"/>
+  <resource id="r-1">
+    <type>Group</type>
+    <child-resource idref="r1"/>
+    <child-resource idref="r2"/>
+    <child-resource idref="r3"/>
+    <child-resource idref="r4"/>
+    <child-resource idref="r5"/>
+    <child-resource idref="r6"/>
+    <child-resource idref="r7"/>
+    <child-resource idref="r8"/>
+    <child-resource idref="r9"/>
+    <child-resource idref="r10"/>
+    <child-resource idref="r11"/>
+    <child-resource idref="r12"/>
+    <child-resource idref="r13"/>
+    <child-resource idref="r14"/>
+    <child-resource idref="r15"/>
+    <child-resource idref="r16"/>
+    <child-resource idref="r18"/>
+    <child-resource idref="r19"/>
+    <child-resource idref="r20"/>
+    <child-resource idref="r21"/>
+    <child-resource idref="r22"/>
+    <child-resource idref="r23"/>
+    <child-resource idref="r24"/>
+    <child-resource idref="r25"/>
+    <child-resource idref="r17"/>
+    <child-resource idref="r28"/>
+    <child-resource idref="r29"/>
+    <child-resource idref="r30"/>
+    <child-resource idref="r26"/>
+  </resource>
+  <resource id="r1">
+    <name>EKR</name>
+    <type>Staff</type>
+    <units-available>0.5</units-available>
+  </resource>
+  <resource id="r2">
+    <name>ABR</name>
+    <type>Staff</type>
+    <units-available>0.599999964237213</units-available>
+  </resource>
+  <resource id="r3">
+    <name>Jesup</name>
+    <type>Staff</type>
+    <units-available>0.699999988079071</units-available>
+  </resource>
+  <resource id="r4">
+    <name>Tim</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r5">
+    <name>Ryan</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r6">
+    <name>Paul</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r7">
+    <name>GCP</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r8">
+    <name>Ben</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r9">
+    <name>JIB</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r10">
+    <name>UX</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r11">
+    <name>Roc</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r12">
+    <name>Shian-Yow</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r13">
+    <name>Test 1</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r14">
+    <name>Adam Cain</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r15">
+    <name>Shelly</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r16">
+    <name>Randy</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r17">
+    <name>FF 26</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r18">
+    <name>UX + Frontend</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r19">
+    <name>Ehugg</name>
+    <type>Staff</type>
+    <units-available>0.5</units-available>
+  </resource>
+  <resource id="r20">
+    <name>Network Engineer 1</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r21">
+    <name>Network engineer 2</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r22">
+    <name>Ted</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r23">
+    <name>Rillian</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r24">
+    <name>Jed</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r25">
+    <name>Resource 2</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r26">
+    <name>Resource 1</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r28">
+    <name>FF 27</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r29">
+    <name>FF 28</name>
+    <type>Staff</type>
+  </resource>
+  <resource id="r30">
+    <name>FF 29</name>
+    <type>Staff</type>
+  </resource>
+  <top-task idref="t-1"/>
+  <task id="t-1">
+    <type>group</type>
+    <child-task idref="t81"/>
+    <child-task idref="t82"/>
+    <child-task idref="t83"/>
+    <child-task idref="t84"/>
+    <child-task idref="t5"/>
+    <child-task idref="t1"/>
+    <child-task idref="t24"/>
+    <child-task idref="t6"/>
+    <child-task idref="t7"/>
+    <child-task idref="t8"/>
+    <child-task idref="t79"/>
+    <child-task idref="t9"/>
+    <child-task idref="t16"/>
+    <child-task idref="t11"/>
+    <child-task idref="t10"/>
+    <child-task idref="t12"/>
+    <child-task idref="t13"/>
+    <child-task idref="t17"/>
+    <child-task idref="t18"/>
+    <child-task idref="t19"/>
+    <child-task idref="t20"/>
+    <child-task idref="t21"/>
+    <child-task idref="t22"/>
+    <child-task idref="t25"/>
+    <child-task idref="t61"/>
+    <child-task idref="t26"/>
+    <child-task idref="t27"/>
+    <child-task idref="t28"/>
+    <child-task idref="t29"/>
+    <child-task idref="t31"/>
+    <child-task idref="t30"/>
+    <child-task idref="t32"/>
+    <child-task idref="t33"/>
+    <child-task idref="t34"/>
+    <child-task idref="t35"/>
+    <child-task idref="t36"/>
+    <child-task idref="t54"/>
+    <child-task idref="t37"/>
+    <child-task idref="t45"/>
+    <child-task idref="t39"/>
+    <child-task idref="t40"/>
+    <child-task idref="t46"/>
+    <child-task idref="t70"/>
+    <child-task idref="t42"/>
+    <child-task idref="t60"/>
+    <child-task idref="t74"/>
+    <child-task idref="t44"/>
+    <child-task idref="t72"/>
+    <child-task idref="t77"/>
+    <child-task idref="t47"/>
+    <child-task idref="t48"/>
+    <child-task idref="t49"/>
+    <child-task idref="t50"/>
+    <child-task idref="t51"/>
+    <child-task idref="t52"/>
+    <child-task idref="t53"/>
+    <child-task idref="t55"/>
+    <child-task idref="t56"/>
+    <child-task idref="t80"/>
+    <child-task idref="t57"/>
+    <child-task idref="t58"/>
+    <child-task idref="t59"/>
+    <child-task idref="t62"/>
+    <child-task idref="t63"/>
+    <child-task idref="t64"/>
+    <child-task idref="t87"/>
+    <child-task idref="t88"/>
+    <child-task idref="t89"/>
+    <child-task idref="t65"/>
+  </task>
+  <task id="t1">
+    <title>Persona Integration</title>
+    <leveled-start>2013-09-04T23:00:00.000Z</leveled-start>
+    <effort>1152000</effort>
+    <start-constraint-date>2013-09-04T23:00:00.000Z</start-constraint-date>
+    <prerequisite-task idref="t5"/>
+    <assignment idref="r5"/>
+  </task>
+  <task id="t5">
+    <title>Generic identity</title>
+    <leveled-start>2013-08-07T15:45:00.000Z</leveled-start>
+    <effort>576000</effort>
+    <start-constraint-date>2013-08-07T15:45:00.000Z</start-constraint-date>
+    <assignment idref="r24"/>
+  </task>
+  <task id="t6">
+    <title>Audio recording (rec API)</title>
+    <leveled-start>2013-08-07T15:00:00.000Z</leveled-start>
+    <effort>144000</effort>
+    <assignment idref="r15"/>
+  </task>
+  <task id="t7">
+    <title>Video recording (rec API)</title>
+    <leveled-start>2013-08-14T00:00:00.000Z</leveled-start>
+    <effort>144000</effort>
+    <assignment idref="r15"/>
+  </task>
+  <task id="t8">
+    <title>Audio latency - acceptable</title>
+    <leveled-start>2013-09-25T21:42:53.000Z</leveled-start>
+    <priority>80</priority>
+    <effort>1152000</effort>
+    <prerequisite-task idref="t11"/>
+    <prerequisite-task idref="t16"/>
+    <assignment idref="r3" units="0.699999988079071"/>
+  </task>
+  <task id="t9">
+    <title>Audio latency &amp; pipeline excellent</title>
+    <leveled-start>2013-12-13T23:51:29.000Z</leveled-start>
+    <priority>80</priority>
+    <effort>1152000</effort>
+    <prerequisite-task idref="t11"/>
+    <assignment idref="r3" units="0.699999988079071"/>
+  </task>
+  <task id="t10">
+    <title>AEC that spans all devices</title>
+    <leveled-start>2014-03-05T16:00:05.000Z</leveled-start>
+    <effort>1152000</effort>
+    <start-constraint-date>2013-12-25T16:00:00.000Z</start-constraint-date>
+    <assignment idref="r3" units="0.699999988079071"/>
+  </task>
+  <task id="t11">
+    <title>Media perf instrumentation</title>
+    <leveled-start>2013-08-16T16:08:35.000Z</leveled-start>
+    <priority>100</priority>
+    <effort>576000</effort>
+    <assignment idref="r3" units="0.699999988079071"/>
+  </task>
+  <task id="t12">
+    <title>Global media congestion control</title>
+    <leveled-start>2014-05-23T16:08:41.000Z</leveled-start>
+    <effort>1152000</effort>
+    <assignment idref="r3" units="0.699999988079071"/>
+  </task>
+  <task id="t13">
+    <title>Combined media/data congestion control</title>
+    <leveled-start>2014-08-12T17:17:16.000Z</leveled-start>
+    <effort>1152000</effort>
+    <assignment idref="r3" units="0.699999988079071"/>
+  </task>
+  <task id="t16">
+    <title>Audio latency measurement and backend</title>
+    <leveled-start>2013-08-07T15:00:00.000Z</leveled-start>
+    <effort>576000</effort>
+    <start-constraint-date>2013-08-07T15:00:00.000Z</start-constraint-date>
+    <assignment idref="r6"/>
+  </task>
+  <task id="t17">
+    <title>Plan for quality eval infrastructure</title>
+    <leveled-start>2013-09-04T00:00:00.000Z</leveled-start>
+    <effort>1152000</effort>
+    <assignment idref="r6"/>
+  </task>
+  <task id="t18">
+    <title>Quality evaluations infrastructure</title>
+    <leveled-start>2013-10-30T00:00:00.000Z</leveled-start>
+    <effort>3456000</effort>
+    <assignment idref="r6"/>
+  </task>
+  <task id="t19">
+    <title>Multiple simultaneous peer connections instrumentation and analysis</title>
+    <leveled-start>2014-04-16T00:00:00.000Z</leveled-start>
+    <effort>576000</effort>
+    <assignment idref="r6"/>
+  </task>
+  <task id="t20">
+    <title>Multiple simultaneous peer connections working ok </title>
+    <leveled-start>2014-05-14T00:00:00.000Z</leveled-start>
+    <effort>1152000</effort>
+    <assignment idref="r6"/>
+  </task>
+  <task id="t21">
+    <title>Multiple simultaneous peerconnections working well</title>
+    <leveled-start>2014-07-09T00:00:00.000Z</leveled-start>
+    <effort>1728000</effort>
+    <assignment idref="r6"/>
+  </task>
+  <task id="t22">
+    <title>CPU Overload (design and implementation)</title>
+    <leveled-start>2013-08-07T15:00:00.000Z</leveled-start>
+    <effort>1152000</effort>
+    <assignment idref="r7"/>
+  </task>
+  <task id="t24">
+    <title>Video perf measurements II</title>
+    <leveled-start>2013-08-07T15:00:00.000Z</leveled-start>
+    <effort>576000</effort>
+    <start-constraint-date>2013-08-07T15:00:00.000Z</start-constraint-date>
+    <assignment idref="r8"/>
+  </task>
+  <task id="t25">
+    <title>Statistics API - basic for telemetry</title>
+    <leveled-start>2013-08-07T15:00:00.000Z</leveled-start>
+    <priority>100</priority>
+    <effort>576000</effort>
+    <assignment idref="r9"/>
+  </task>
+  <task id="t26">
+    <title>gUM constraints</title>
+    <leveled-start>2013-11-13T18:00:00.000Z</leveled-start>
+    <effort>1728000</effort>
+    <start-constraint-date>2013-10-29T21:00:00.000Z</start-constraint-date>
+    <assignment idref="r9"/>
+  </task>
+  <task id="t27">
+    <title>Non-interactive device selection</title>
+    <leveled-start>2014-02-05T18:00:00.000Z</leveled-start>
+    <effort>1728000</effort>
+    <assignment idref="r9"/>
+  </task>
+  <task id="t28">
+    <title>Implement persistent permissions</title>
+    <leveled-start>2014-04-30T17:00:00.000Z</leveled-start>
+    <effort>1152000</effort>
+    <assignment idref="r9"/>
+  </task>
+  <task id="t29">
+    <title>Screen sharing implementation</title>
+    <leveled-start>2014-06-25T17:00:00.000Z</leveled-start>
+    <effort>1728000</effort>
+    <assignment idref="r9"/>
+  </task>
+  <task id="t30">
+    <title>UX for non-interactive device selection</title>
+    <leveled-start>2013-08-07T15:00:00.000Z</leveled-start>
+    <effort>1152000</effort>
+    <assignment idref="r18"/>
+  </task>
+  <task id="t31">
+    <title>Statistics API remaining work</title>
+    <leveled-start>2014-09-17T17:00:00.000Z</leveled-start>
+    <effort>1728000</effort>
+    <assignment idref="r9"/>
+  </task>
+  <task id="t32">
+    <title>Persistent permissions UI</title>
+    <leveled-start>2013-10-02T00:00:00.000Z</leveled-start>
+    <effort>1728000</effort>
+    <assignment idref="r18"/>
+  </task>
+  <task id="t33">
+    <title>Screen sharing UX</title>
+    <leveled-start>2013-12-25T01:00:00.000Z</leveled-start>
+    <effort>1728000</effort>
+    <assignment idref="r18"/>
+  </task>
+  <task id="t34">
+    <title>Full mediastream support</title>
+    <leveled-start>2013-08-07T15:00:00.000Z</leveled-start>
+    <effort>576000</effort>
+    <assignment idref="r11"/>
+  </task>
+  <task id="t35">
+    <title>Decouple video frame from audio frame delivery</title>
+    <leveled-start>2013-09-04T00:00:00.000Z</leveled-start>
+    <effort>1728000</effort>
+    <assignment idref="r11"/>
+  </task>
+  <task id="t36">
+    <title>SDP max fame size (6236)</title>
+    <leveled-start>2013-08-07T15:00:00.000Z</leveled-start>
+    <effort>1152000</effort>
+    <assignment idref="r12"/>
+  </task>
+  <task id="t37">
+    <title>Analyze call setup latency</title>
+    <leveled-start>2013-09-23T17:40:56.000Z</leveled-start>
+    <effort>288000</effort>
+    <assignment idref="r2" units="0.599999964237213"/>
+  </task>
+  <task id="t39">
+    <title>Take Deltas in SDP</title>
+    <leveled-start>2013-09-04T22:00:00.000Z</leveled-start>
+    <effort>1152000</effort>
+    <assignment idref="r19" units="0.5"/>
+  </task>
+  <task id="t40">
+    <title>BUNDLE signaling</title>
+    <leveled-start>2013-08-07T15:00:00.000Z</leveled-start>
+    <priority>100</priority>
+    <effort>576000</effort>
+    <assignment idref="r2" units="0.599999964237213"/>
+  </task>
+  <task id="t42">
+    <title>Signaling support for &gt;1 A/V flows</title>
+    <leveled-start>2013-10-16T15:01:24.000Z</leveled-start>
+    <effort>2880000</effort>
+    <assignment idref="r2" units="0.599999964237213"/>
+  </task>
+  <task id="t44">
+    <title>SDP renegotiation for 1 A/V</title>
+    <leveled-start>2014-06-05T21:26:01.000Z</leveled-start>
+    <effort>576000</effort>
+    <start-constraint-date>2014-02-19T17:00:00.000Z</start-constraint-date>
+    <prerequisite-task idref="t42"/>
+    <assignment idref="r19" units="0.5"/>
+  </task>
+  <task id="t45">
+    <title>RTP/RTCP-mux finish</title>
+    <leveled-start>2013-08-07T15:00:00.000Z</leveled-start>
+    <priority>100</priority>
+    <effort>298800</effort>
+    <start-constraint-date>2013-08-07T15:00:00.000Z</start-constraint-date>
+    <assignment idref="r19" units="0.5"/>
+  </task>
+  <task id="t46">
+    <title>BUNDLE transport</title>
+    <leveled-start>2013-08-07T17:00:00.000Z</leveled-start>
+    <priority>100</priority>
+    <effort>576000</effort>
+    <start-constraint-date>2013-08-07T17:00:00.000Z</start-constraint-date>
+    <assignment idref="r20"/>
+  </task>
+  <task id="t47">
+    <title>ICE state reporting</title>
+    <leveled-start>2014-01-22T01:00:00.000Z</leveled-start>
+    <effort>576000</effort>
+    <assignment idref="r1" units="0.5"/>
+  </task>
+  <task id="t48">
+    <title>ICE unit tests with simulated NAT</title>
+    <leveled-start>2014-03-19T00:00:00.000Z</leveled-start>
+    <effort>2880000</effort>
+    <assignment idref="r1" units="0.5"/>
+  </task>
+  <task id="t49">
+    <title>Trickle ICE (generate)</title>
+    <leveled-start>2013-10-02T00:00:00.000Z</leveled-start>
+    <priority>80</priority>
+    <effort>1152000</effort>
+    <assignment idref="r1" units="0.5"/>
+  </task>
+  <task id="t50">
+    <title>TURN TCP</title>
+    <leveled-start>2013-08-07T15:00:00.000Z</leveled-start>
+    <priority>100</priority>
+    <effort>576000</effort>
+    <assignment idref="r1" units="0.5"/>
+  </task>
+  <task id="t51">
+    <title>Isolated streams</title>
+    <effort>576000</effort>
+  </task>
+  <task id="t52">
+    <title>&quot;Security properties&quot; UI</title>
+    <leveled-start>2014-03-19T00:00:00.000Z</leveled-start>
+    <effort>1728000</effort>
+    <assignment idref="r18"/>
+  </task>
+  <task id="t53">
+    <title>Persistent DTLS Keys</title>
+    <effort>1152000</effort>
+    <start-constraint-date>2014-12-15T18:00:00.000Z</start-constraint-date>
+  </task>
+  <task id="t54">
+    <title>Detection of network failure</title>
+    <leveled-start>2013-10-02T15:00:00.000Z</leveled-start>
+    <effort>1152000</effort>
+    <start-constraint-date>2013-10-02T15:00:00.000Z</start-constraint-date>
+    <assignment idref="r12"/>
+  </task>
+  <task id="t55">
+    <title>Update ICE/ICE restart</title>
+    <leveled-start>2014-01-22T18:00:00.000Z</leveled-start>
+    <effort>1728000</effort>
+    <assignment idref="r20"/>
+  </task>
+  <task id="t56">
+    <title>Detailed ICE status report to JS</title>
+    <leveled-start>2013-09-04T17:00:00.000Z</leveled-start>
+    <priority>100</priority>
+    <effort>1152000</effort>
+    <assignment idref="r20"/>
+  </task>
+  <task id="t57">
+    <title>Networking testbed and ICE E2E tests</title>
+    <leveled-start>2014-04-16T17:00:00.000Z</leveled-start>
+    <effort>5184000</effort>
+    <assignment idref="r20"/>
+  </task>
+  <task id="t58">
+    <title>Build infrastructure for multiple machine testing</title>
+    <leveled-start>2013-08-07T15:00:00.000Z</leveled-start>
+    <effort>1152000</effort>
+    <assignment idref="r14"/>
+  </task>
+  <task id="t59">
+    <title>Full interop testbed (variety of devices)</title>
+    <leveled-start>2013-08-07T15:00:00.000Z</leveled-start>
+    <effort>5184000</effort>
+    <assignment idref="r13"/>
+  </task>
+  <task id="t60">
+    <title>Networking support for &gt;1 A/V</title>
+    <leveled-start>2013-10-30T17:00:00.000Z</leveled-start>
+    <priority>80</priority>
+    <effort>1728000</effort>
+    <start-constraint-date>2013-08-07T15:00:00.000Z</start-constraint-date>
+    <assignment idref="r20"/>
+  </task>
+  <task id="t61">
+    <title>Implement error reporting behavior ???</title>
+    <leveled-start>2013-09-04T00:00:00.000Z</leveled-start>
+    <priority>80</priority>
+    <effort>1152000</effort>
+    <assignment idref="r9"/>
+  </task>
+  <task id="t62">
+    <title>Full suite of mochitests</title>
+    <leveled-start>2014-04-16T00:00:00.000Z</leveled-start>
+    <effort>5184000</effort>
+    <assignment idref="r13"/>
+  </task>
+  <task id="t63">
+    <title>Automated networking testbed</title>
+    <leveled-start>2013-08-07T15:00:00.000Z</leveled-start>
+    <effort>5184000</effort>
+    <assignment idref="r22"/>
+  </task>
+  <task id="t64">
+    <title>Improve Opus stereo support in GIPS</title>
+    <leveled-start>2013-08-07T15:00:00.000Z</leveled-start>
+    <effort>3456000</effort>
+    <assignment idref="r23"/>
+  </task>
+  <task id="t65">
+    <title>Implement stereo in media pipeline</title>
+    <leveled-start>2014-01-22T01:00:00.000Z</leveled-start>
+    <effort>576000</effort>
+    <assignment idref="r23"/>
+  </task>
+  <task id="t70">
+    <title>BUNDLE</title>
+    <type>milestone</type>
+    <start-constraint-date>2013-09-23T21:00:00.000Z</start-constraint-date>
+    <prerequisite-task idref="t40" kind="FF"/>
+    <prerequisite-task idref="t46"/>
+  </task>
+  <task id="t72">
+    <title>SDP negotiation for &gt;1 A/V flows</title>
+    <leveled-start>2014-07-31T21:26:02.000Z</leveled-start>
+    <effort>1728000</effort>
+    <prerequisite-task idref="t44"/>
+    <assignment idref="r19" units="0.5"/>
+  </task>
+  <task id="t74">
+    <title>&gt;1 A/V</title>
+    <type>milestone</type>
+    <start-constraint-date>2014-02-19T18:00:00.000Z</start-constraint-date>
+    <prerequisite-task idref="t42" kind="FF"/>
+    <prerequisite-task idref="t60"/>
+  </task>
+  <task id="t77">
+    <title>Renegotiation</title>
+    <type>milestone</type>
+    <prerequisite-task idref="t72"/>
+  </task>
+  <task id="t79">
+    <title>Uplift to GIPS 3.34</title>
+    <leveled-start>2013-08-07T15:00:00.000Z</leveled-start>
+    <priority>110</priority>
+    <effort>144000</effort>
+    <assignment idref="r3" units="0.699999988079071"/>
+  </task>
+  <task id="t80">
+    <title>ICE debugging panel</title>
+    <leveled-start>2013-10-30T17:00:00.000Z</leveled-start>
+    <priority>70</priority>
+    <effort>288000</effort>
+    <prerequisite-task idref="t56"/>
+    <assignment idref="r9"/>
+  </task>
+  <task id="t81">
+    <title>FIREFOX 26</title>
+    <leveled-start>2013-08-07T15:00:00.000Z</leveled-start>
+    <effort>864000</effort>
+    <style>
+      <value key="font-fill">
+        <color r="1" g="0.171372" b="0.14779"/>
+      </value>
+    </style>
+    <assignment idref="r17"/>
+  </task>
+  <task id="t82">
+    <title>FIREFOX 27</title>
+    <leveled-start>2013-09-18T15:00:00.000Z</leveled-start>
+    <effort>864000</effort>
+    <style>
+      <value key="font-fill">
+        <color r="1" g="0.171372" b="0.14779"/>
+      </value>
+    </style>
+    <prerequisite-task idref="t81"/>
+    <assignment idref="r28"/>
+  </task>
+  <task id="t83">
+    <title>FIREFOX 28</title>
+    <leveled-start>2013-10-30T15:00:00.000Z</leveled-start>
+    <effort>864000</effort>
+    <style>
+      <value key="font-fill">
+        <color r="1" g="0.171372" b="0.14779"/>
+      </value>
+    </style>
+    <prerequisite-task idref="t82"/>
+    <assignment idref="r29"/>
+  </task>
+  <task id="t84">
+    <title>FIREFOX 29</title>
+    <leveled-start>2013-12-11T16:00:00.000Z</leveled-start>
+    <effort>864000</effort>
+    <style>
+      <value key="font-fill">
+        <color r="1" g="0.171372" b="0.14779"/>
+      </value>
+    </style>
+    <prerequisite-task idref="t83"/>
+    <assignment idref="r30"/>
+  </task>
+  <task id="t87">
+    <title>PT reuse/demux</title>
+    <leveled-start>2013-12-25T23:00:00.000Z</leveled-start>
+    <effort>288000</effort>
+    <assignment idref="r19" units="0.5"/>
+  </task>
+  <task id="t88">
+    <title>RTP Header Extension for Demux</title>
+    <leveled-start>2014-01-22T23:00:00.000Z</leveled-start>
+    <effort>288000</effort>
+    <assignment idref="r19" units="0.5"/>
+  </task>
+  <task id="t89">
+    <title>SSRC Demux</title>
+    <leveled-start>2014-02-19T23:00:00.000Z</leveled-start>
+    <effort>144000</effort>
+    <assignment idref="r19" units="0.5"/>
+  </task>
+  <critical-path root="-1" enabled="false" resources="false">
+    <color r="1" g="0.5" b="0.5"/>
+  </critical-path>
+</scenario>

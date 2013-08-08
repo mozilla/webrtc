@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<changelog xmlns="http://www.omnigroup.com/namespace/OmniPlan/v2">
+  <version>2.0</version>
+  <task-change-set user="EKR" date="2013-08-07T11:54:29.426Z" timestamp="2013-08-07T11:54:29.426Z">
+    <change idref="t5" to="t-1" to-position="0" resurrection="yes" resolved="yes">
+      <change idref="t5" attribute="effort" type="real" from="28800" to="576000"/>
+      <change idref="t5" attribute="internalAssignments" type="string" from="" to="24"/>
+      <change idref="t5" attribute="resourceLeveledDate" type="date" to="2013-08-07T15:45:00.000Z"/>
+      <change idref="t5" attribute="startConstraintDate" type="date" to="2013-08-07T15:45:00.000Z"/>
+      <change idref="t5" attribute="title" type="string" to="Generic identity"/>
+    </change>
+    <change idref="t6" to="t-1" to-position="2" resolved="yes">
+      <change idref="t6" attribute="effort" type="real" from="28800" to="144000"/>
+      <change idref="t6" attribute="internalAssignments" type="string" from="" to="15"/>
+      <change idref="t6" attribute="resourceLeveledDate" type="date" to="2013-08-07T15:00:00.000Z"/>
+      <change idref="t6" attribute="title" type="string" to="Audio recording (rec API)"/>
+    </change>
+    <change idref="t7" to="t-1" to-position="3" resolved="yes">
+      <change idref="t7" attribute="effort" type="real" from="28800" to="144000"/>
+      <change idref="t7" attribute="internalAssignments" type="string" from="" to="15"/>
+      <change idref="t7" attribute="resourceLeveledDate" type="date" to="2013-08-14T00:00:00.000Z"/>
+      <change idref="t7" attribute="title" type="string" to="Video recording (rec API)"/>
+    </change>
+    <change idref="t8" to="t-1" to-position="4" resolved="yes">
+      <change idref="t8" attribute="effort" type="real" from="28800" to="1152000"/>
+      <change idref="t8" attribute="internalAssignments" type="string" from="" to="3 {70}"/>
+      <change idref="t8" attribute="internalPrerequisitesString" type="string" to="11FS, 16FS"/>
+      <change idref="t8" attribute="priority" type="real" from="0" to="80"/>
+      <change idref="t8" attribute="resourceLeveledDate" type="date" to="2013-09-25T21:42:53.000Z"/>
+      <change idref="t8" attribute="title" type="string" to="Audio latency - acceptable"/>
+    </change>
+    <change idref="t79" to="t-1" to-position="5" resolved="yes">
+      <change idref="t79" attribute="effort" type="real" from="28800" to="144000"/>
+      <change idref="t79" attribute="internalAssignments" type="string" from="" to="3 {70}"/>
+      <change idref="t79" attribute="priority" type="real" from="0" to="110"/>
+      <change idref="t79" attribute="resourceLeveledDate" type="date" to="2013-08-07T15:00:00.000Z"/>
+      <change idref="t79" attribute="title" type="string" to="Uplift to GIPS 3.34"/>
+    </change>
+    <change idref="t9" to="t-1" to-position="6" resolved="yes">
+      <change idref="t9" attribute="effort" type="real" from="28800" to="1152000"/>
+      <change idref="t9" attribute="internalAssignments" type="string" from="" to="3 {70}"/>
+      <change idref="t9" attribute="internalPrerequisitesString" type="string" to="11FS"/>
+      <change idref="t9" attribute="priority" type="real" from="0" to="80"/>
+      <change idref="t9" attribute="resourceLeveledDate" type="date" to="2013-12-13T23:51:29.000Z"/>
+      <change idref="t9" attribute="title" type="string" to="Audio latency &amp; pipeline excellent"/>
+    </change>
+    <change idref="t11" to="t-1" to-position="7" resolved="yes">
+      <change idref="t11" attribute="effort" type="real" from="28800" to="576000"/>
+      <change idref="t11" attribute="internalAssignments" type="string" from="" to="3 {70}"/>
+      <change idref="t11" attribute="priority" type="real" from="0" to="100"/>
+      <change idref="t11" attribute="resourceLeveledDate" type="date" to="2013-08-16T16:08:35.000Z"/>
+      <change idref="t11" attribute="title" type="string" to="Media perf instrumentation"/>
+    </change>
+    <change idref="t10" to="t-1" to-position="8" resolved="yes">
+      <change idref="t10" attribute="effort" type="real" from="28800" to="1152000"/>
+      <change idref="t10" attribute="internalAssignments" type="string" from="" to="3 {70}"/>
+      <change idref="t10" attribute="resourceLeveledDate" type="date" to="2014-03-05T16:00:05.000Z"/>
+      <change idref="t10" attribute="startConstraintDate" type="date" to="2013-12-25T16:00:00.000Z"/>
+      <change idref="t10" attribute="title" type="string" to="AEC that spans all devices"/>
+    </change>
+    <change idref="t12" to="t-1" to-position="9" resolved="yes">
+      <change idref="t12" attribute="effort" type="real" from="28800" to="1152000"/>
+      <change idref="t12" attribute="internalAssignments" type="string" from="" to="3 {70}"/>
+      <change idref="t12" attribute="resourceLeveledDate" type="date" to="2014-05-23T16:08:41.000Z"/>
+      <change idref="t12" attribute="title" type="string" to="Global media congestion control"/>
+    </change>
+    <change idref="t13" to="t-1" to-position="10" resolved="yes">
+      <change idref="t13" attribute="effort" type="real" from="28800" to="1152000"/>
+      <change idref="t13" attribute="internalAssignments" type="string" from="" to="3 {70}"/>
+      <change idref="t13" attribute="resourceLeveledDate" type="date" to="2014-08-12T17:17:16.000Z"/>
+      <change idref="t13" attribute="title" type="string" to="Combined media/data congestion control"/>
+    </change>
+    <change idref="t16" to="t-1" to-position="11" resolved="yes">
+      <change idref="t16" attribute="effort" type="real" from="28800" to="576000"/>
+      <change idref="t16" attribute="internalAssignments" type="string" from="" to="6"/>
+      <change idref="t16" attribute="resourceLeveledDate" type="date" to="2013-08-07T15:00:00.000Z"/>
+      <change idref="t16" attribute="title" type="string" to="Audio latency measurement and backend"/>
+    </change>
+    <change idref="t17" to="t-1" to-position="12" resolved="yes">
+      <change idref="t17" attribute="effort" type="real" from="28800" to="1152000"/>
+      <change idref="t17" attribute="internalAssignments" type="string" from="" to="6"/>
+      <change idref="t17" attribute="resourceLeveledDate" type="date" to="2013-09-04T00:00:00.000Z"/>
+      <change idref="t17" attribute="title" type="string" to="Plan for quality eval infrastructure"/>
+    </change>
+    <change idref="t18" to="t-1" to-position="13" resolved="yes">
+      <change idref="t18" attribute="effort" type="real" from="28800" to="3456000"/>
+      <change idref="t18" attribute="internalAssignments" type="string" from="" to="6"/>
+      <change idref="t18" attribute="resourceLeveledDate" type="date" to="2013-10-30T00:00:00.000Z"/>
+      <change idref="t18" attribute="title" type="string" to="Quality evaluations infrastructure"/>
+    </change>
+    <change idref="t19" to="t-1" to-position="14" resolved="yes">
+      <change idref="t19" attribute="effort" type="real" from="28800" to="576000"/>
+      <change idref="t19" attribute="internalAssignments" type="string" from="" to="6"/>
+      <change idref="t19" attribute="resourceLeveledDate" type="date" to="2014-04-16T00:00:00.000Z"/>
+      <change idref="t19" attribute="title" type="string" to="Multiple simultaneous peer connections instrumentation and analysis"/>
+    </change>
+    <change idref="t20" to="t-1" to-position="15" resolved="yes">
+      <change idref="t20" attribute="effort" type="real" from="28800" to="1152000"/>
+      <change idref="t20" attribute="internalAssignments" type="string" from="" to="6"/>
+      <change idref="t20" attribute="resourceLeveledDate" type="date" to="2014-05-14T00:00:00.000Z"/>
+      <change idref="t20" attribute="title" type="string" to="Multiple simultaneous peer connections working ok "/>
+    </change>
+    <change idref="t21" to="t-1" to-position="16" resolved="yes">
+      <change idref="t21" attribute="effort" type="real" from="28800" to="1728000"/>
+      <change idref="t21" attribute="internalAssignments" type="string" from="" to="6"/>
+      <change idref="t21" attribute="resourceLeveledDate" type="date" to="2014-07-09T00:00:00.000Z"/>
+      <change idref="t21" attribute="title" type="string" to="Multiple simultaneous peerconnections working well"/>
+    </change>
+    <change idref="t22" to="t-1" to-position="17" resolved="yes">
+      <change idref="t22" attribute="effort" type="real" from="28800" to="1152000"/>
+      <change idref="t22" attribute="internalAssignments" type="string" from="" to="7"/>
+      <change idref="t22" attribute="resourceLeveledDate" type="date" to="2013-08-07T15:00:00.000Z"/>
+      <change idref="t22" attribute="title" type="string" to="CPU Overload (design and implementation)"/>
+    </change>
+    <change idref="t24" to="t-1" to-position="18" resolved="yes">
+      <change idref="t24" attribute="effort" type="real" from="28800" to="1152000"/>
+      <change idref="t24" attribute="internalAssignments" type="string" from="" to="8"/>
+      <change idref="t24" attribute="resourceLeveledDate" type="date" to="2013-08-07T15:00:00.000Z"/>
+      <change idref="t24" attribute="title" type="string" to="Video perf measurements"/>
+    </change>
+    <change idref="t25" to="t-1" to-position="19" resolved="yes">
+      <change idref="t25" attribute="effort" type="real" from="28800" to="576000"/>
+      <change idref="t25" attribute="internalAssignments" type="string" from="" to="9"/>
+      <change idref="t25" attribute="priority" type="real" from="0" to="100"/>
+      <change idref="t25" attribute="resourceLeveledDate" type="date" to="2013-08-07T15:00:00.000Z"/>
+      <change idref="t25" attribute="title" type="string" to="Statistics API - basic for telemetry"/>
+    </change>
+    <change idref="t61" to="t-1" to-position="20" resolved="yes">
+      <change idref="t61" attribute="effort" type="real" from="28800" to="1152000"/>
+      <change idref="t61" attribute="internalAssignments" type="string" from="" to="9"/>
+      <change idref="t61" attribute="priority" type="real" from="0" to="80"/>
+      <change idref="t61" attribute="resourceLeveledDate" type="date" to="2013-09-04T00:00:00.000Z"/>
+      <change idref="t61" attribute="title" type="string" to="Implement error reporting behavior ???"/>
+    </change>
+    <change idref="t26" to="t-1" to-position="21" resolved="yes">
+      <change idref="t26" attribute="effort" type="real" from="28800" to="1728000"/>
+      <change idref="t26" attribute="internalAssignments" type="string" from="" to="9"/>
+      <change idref="t26" attribute="internalPrerequisitesString" type="string" to="30FS"/>
+      <change idref="t26" attribute="resourceLeveledDate" type="date" to="2013-11-13T18:00:00.000Z"/>
+      <change idref="t26" attribute="title" type="string" to="gUM constraints"/>
+    </change>
+    <change idref="t27" to="t-1" to-position="22" resolved="yes">
+      <change idref="t27" attribute="effort" type="real" from="28800" to="1728000"/>
+      <change idref="t27" attribute="internalAssignments" type="string" from="" to="9"/>
+      <change idref="t27" attribute="resourceLeveledDate" type="date" to="2014-02-05T18:00:00.000Z"/>
+      <change idref="t27" attribute="title" type="string" to="Non-interactive device selection"/>
+    </change>
+    <change idref="t28" to="t-1" to-position="23" resolved="yes">
+      <change idref="t28" attribute="effort" type="real" from="28800" to="1152000"/>
+      <change idref="t28" attribute="internalAssignments" type="string" from="" to="9"/>
+      <change idref="t28" attribute="resourceLeveledDate" type="date" to="2014-04-30T17:00:00.000Z"/>
+      <change idref="t28" attribute="title" type="string" to="Implement persistent permissions"/>
+    </change>
+    <change idref="t29" to="t-1" to-position="24" resolved="yes">
+      <change idref="t29" attribute="effort" type="real" from="28800" to="1728000"/>
+      <change idref="t29" attribute="internalAssignments" type="string" from="" to="9"/>
+      <change idref="t29" attribute="resourceLeveledDate" type="date" to="2014-06-25T17:00:00.000Z"/>
+      <change idref="t29" attribute="title" type="string" to="Screen sharing implementation"/>
+    </change>
+    <change idref="t31" to="t-1" to-position="25" resolved="yes">
+      <change idref="t31" attribute="effort" type="real" from="28800" to="1728000"/>
+      <change idref="t31" attribute="internalAssignments" type="string" from="" to="9"/>
+      <change idref="t31" attribute="resourceLeveledDate" type="date" to="2014-09-17T17:00:00.000Z"/>
+      <change idref="t31" attribute="title" type="string" to="Statistics API remaining work"/>
+    </change>
+    <change idref="t30" to="t-1" to-position="26" resolved="yes">
+      <change idref="t30" attribute="effort" type="real" from="28800" to="1152000"/>
+      <change idref="t30" attribute="internalAssignments" type="string" from="" to="18"/>
+      <change idref="t30" attribute="resourceLeveledDate" type="date" to="2013-08-07T15:00:00.000Z"/>
+      <change idref="t30" attribute="title" type="string" to="UX for non-interactive device selection"/>
+    </change>
+    <change idref="t32" to="t-1" to-position="27" resolved="yes">
+      <change idref="t32" attribute="effort" type="real" from="28800" to="1728000"/>
+      <change idref="t32" attribute="internalAssignments" type="string" from="" to="18"/>
+      <change idref="t32" attribute="resourceLeveledDate" type="date" to="2013-10-02T00:00:00.000Z"/>
+      <change idref="t32" attribute="title" type="string" to="Persistent permissions UI"/>
+    </change>
+    <change idref="t33" to="t-1" to-position="28" resolved="yes">
+      <change idref="t33" attribute="effort" type="real" from="28800" to="1728000"/>
+      <change idref="t33" attribute="internalAssignments" type="string" from="" to="18"/>
+      <change idref="t33" attribute="resourceLeveledDate" type="date" to="2013-12-25T01:00:00.000Z"/>
+      <change idref="t33" attribute="title" type="string" to="Screen sharing UX"/>
+    </change>
+    <change idref="t34" to="t-1" to-position="29" resolved="yes">
+      <change idref="t34" attribute="effort" type="real" from="28800" to="576000"/>
+      <change idref="t34" attribute="internalAssignments" type="string" from="" to="11"/>
+      <change idref="t34" attribute="resourceLeveledDate" type="date" to="2013-08-07T15:00:00.000Z"/>
+      <change idref="t34" attribute="title" type="string" to="Full mediastream support"/>
+    </change>
+    <change idref="t35" to="t-1" to-position="30" resolved="yes">
+      <change idref="t35" attribute="effort" type="real" from="28800" to="1728000"/>
+      <change idref="t35" attribute="internalAssignments" type="string" from="" to="11"/>
+      <change idref="t35" attribute="resourceLeveledDate" type="date" to="2013-09-04T00:00:00.000Z"/>
+      <change idref="t35" attribute="title" type="string" to="Decouple video frame from audio frame delivery"/>
+    </change>
+    <change idref="t36" to="t-1" to-position="31" resolved="yes">
+      <change idref="t36" attribute="effort" type="real" from="28800" to="1152000"/>
+      <change idref="t36" attribute="internalAssignments" type="string" from="" to="12"/>
+      <change idref="t36" attribute="resourceLeveledDate" type="date" to="2013-08-07T15:00:00.000Z"/>
+      <change idref="t36" attribute="title" type="string" to="SDP max fame size (6236)"/>
+    </change>
+    <change idref="t54" to="t-1" to-position="32" resolved="yes">
+      <change idref="t54" attribute="effort" type="real" from="28800" to="1152000"/>
+      <change idref="t54" attribute="internalAssignments" type="string" from="" to="12"/>
+      <change idref="t54" attribute="resourceLeveledDate" type="date" to="2013-10-02T15:00:00.000Z"/>
+      <change idref="t54" attribute="startConstraintDate" type="date" to="2013-10-02T15:00:00.000Z"/>
+      <change idref="t54" attribute="title" type="string" to="Detection of network failure"/>
+    </change>
+    <change idref="t37" to="t-1" to-position="33" resolved="yes">
+      <change idref="t37" attribute="effort" type="real" from="28800" to="288000"/>
+      <change idref="t37" attribute="internalAssignments" type="string" from="" to="2 {60}"/>
+      <change idref="t37" attribute="resourceLeveledDate" type="date" to="2013-09-23T17:40:56.000Z"/>
+      <change idref="t37" attribute="title" type="string" to="Analyze call setup latency"/>
+    </change>
+    <change idref="t39" to="t-1" to-position="34" resolved="yes">
+      <change idref="t39" attribute="effort" type="real" from="28800" to="1152000"/>
+      <change idref="t39" attribute="internalAssignments" type="string" from="" to="2 {60}"/>
+      <change idref="t39" attribute="resourceLeveledDate" type="date" to="2013-10-16T15:01:24.000Z"/>
+      <change idref="t39" attribute="title" type="string" to="Take Deltas in SDP"/>
+    </change>
+    <change idref="t40" to="t-1" to-position="35" resolved="yes">
+      <change idref="t40" attribute="effort" type="real" from="28800" to="576000"/>
+      <change idref="t40" attribute="internalAssignments" type="string" from="" to="2 {60}"/>
+      <change idref="t40" attribute="priority" type="real" from="0" to="100"/>
+      <change idref="t40" attribute="resourceLeveledDate" type="date" to="2013-08-07T15:00:00.000Z"/>
+      <change idref="t40" attribute="title" type="string" to="BUNDLE signaling"/>
+    </change>
+    <change idref="t46" to="t-1" to-position="36" resolved="yes">
+      <change idref="t46" attribute="effort" type="real" from="28800" to="576000"/>
+      <change idref="t46" attribute="internalAssignments" type="string" from="" to="20"/>
+      <change idref="t46" attribute="priority" type="real" from="0" to="100"/>
+      <change idref="t46" attribute="resourceLeveledDate" type="date" to="2013-08-07T17:00:00.000Z"/>
+      <change idref="t46" attribute="startConstraintDate" type="date" to="2013-08-07T17:00:00.000Z"/>
+      <change idref="t46" attribute="title" type="string" to="BUNDLE transport"/>
+    </change>
+    <change idref="t70" to="t-1" to-position="37" resolved="yes">
+      <change idref="t70" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t70" attribute="internalPrerequisitesString" type="string" to="40FF, 46FS"/>
+      <change idref="t70" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t70" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t70" attribute="startConstraintDate" type="date" to="2013-09-23T21:00:00.000Z"/>
+      <change idref="t70" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t70" attribute="title" type="string" to="BUNDLE"/>
+    </change>
+    <change idref="t42" to="t-1" to-position="38" resolved="yes">
+      <change idref="t42" attribute="effort" type="real" from="28800" to="2880000"/>
+      <change idref="t42" attribute="internalAssignments" type="string" from="" to="19"/>
+      <change idref="t42" attribute="internalPrerequisitesString" type="string" to="43FS"/>
+      <change idref="t42" attribute="resourceLeveledDate" type="date" to="2013-10-02T15:00:00.000Z"/>
+      <change idref="t42" attribute="title" type="string" to="Signaling support for &gt;1 A/V flows"/>
+    </change>
+    <change idref="t43" to="t-1" to-position="39" resolved="yes">
+      <change idref="t43" attribute="effort" type="real" from="28800" to="576000"/>
+      <change idref="t43" attribute="internalAssignments" type="string" from="" to="19"/>
+      <change idref="t43" attribute="resourceLeveledDate" type="date" to="2013-09-04T00:00:00.000Z"/>
+      <change idref="t43" attribute="title" type="string" to="Plan and scope signaling support for &gt;1 A/V"/>
+    </change>
+    <change idref="t60" to="t-1" to-position="40" resolved="yes">
+      <change idref="t60" attribute="effort" type="real" from="28800" to="1728000"/>
+      <change idref="t60" attribute="internalAssignments" type="string" from="" to="20"/>
+      <change idref="t60" attribute="priority" type="real" from="0" to="80"/>
+      <change idref="t60" attribute="resourceLeveledDate" type="date" to="2013-10-30T17:00:00.000Z"/>
+      <change idref="t60" attribute="startConstraintDate" type="date" to="2013-08-07T15:00:00.000Z"/>
+      <change idref="t60" attribute="title" type="string" to="Networking support for &gt;1 A/V"/>
+    </change>
+    <change idref="t74" to="t-1" to-position="41" resolved="yes">
+      <change idref="t74" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t74" attribute="internalPrerequisitesString" type="string" to="42FF, 60FS"/>
+      <change idref="t74" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t74" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t74" attribute="startConstraintDate" type="date" to="2014-02-19T18:00:00.000Z"/>
+      <change idref="t74" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t74" attribute="title" type="string" to="&gt;1 A/V"/>
+    </change>
+    <change idref="t44" to="t-1" to-position="42" resolved="yes">
+      <change idref="t44" attribute="effort" type="real" from="28800" to="576000"/>
+      <change idref="t44" attribute="internalAssignments" type="string" from="" to="19"/>
+      <change idref="t44" attribute="internalPrerequisitesString" type="string" to="42FS"/>
+      <change idref="t44" attribute="resourceLeveledDate" type="date" to="2014-02-19T17:00:00.000Z"/>
+      <change idref="t44" attribute="startConstraintDate" type="date" to="2014-02-19T17:00:00.000Z"/>
+      <change idref="t44" attribute="title" type="string" to="SDP renegotiation for 1 A/V"/>
+    </change>
+    <change idref="t72" to="t-1" to-position="43" resolved="yes">
+      <change idref="t72" attribute="effort" type="real" from="28800" to="1728000"/>
+      <change idref="t72" attribute="internalAssignments" type="string" from="" to="19"/>
+      <change idref="t72" attribute="internalPrerequisitesString" type="string" to="44FS"/>
+      <change idref="t72" attribute="resourceLeveledDate" type="date" to="2014-03-19T16:00:00.000Z"/>
+      <change idref="t72" attribute="title" type="string" to="SDP negotiation for &gt;1 A/V flows"/>
+    </change>
+    <change idref="t77" to="t-1" to-position="44" resolved="yes">
+      <change idref="t77" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t77" attribute="internalPrerequisitesString" type="string" to="72FS"/>
+      <change idref="t77" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t77" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t77" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t77" attribute="title" type="string" to="Renegotiation"/>
+    </change>
+    <change idref="t45" to="t-1" to-position="45" resolved="yes">
+      <change idref="t45" attribute="effort" type="real" from="28800" to="576000"/>
+      <change idref="t45" attribute="internalAssignments" type="string" from="" to="19"/>
+      <change idref="t45" attribute="priority" type="real" from="0" to="100"/>
+      <change idref="t45" attribute="resourceLeveledDate" type="date" to="2013-08-07T15:00:00.000Z"/>
+      <change idref="t45" attribute="title" type="string" to="RTP/RTCP-mux"/>
+    </change>
+    <change idref="t47" to="t-1" to-position="46" resolved="yes">
+      <change idref="t47" attribute="effort" type="real" from="28800" to="576000"/>
+      <change idref="t47" attribute="internalAssignments" type="string" from="" to="1 {50}"/>
+      <change idref="t47" attribute="resourceLeveledDate" type="date" to="2014-01-22T01:00:00.000Z"/>
+      <change idref="t47" attribute="title" type="string" to="ICE state reporting"/>
+    </change>
+    <change idref="t48" to="t-1" to-position="47" resolved="yes">
+      <change idref="t48" attribute="effort" type="real" from="28800" to="2880000"/>
+      <change idref="t48" attribute="internalAssignments" type="string" from="" to="1 {50}"/>
+      <change idref="t48" attribute="resourceLeveledDate" type="date" to="2014-03-19T00:00:00.000Z"/>
+      <change idref="t48" attribute="title" type="string" to="ICE unit tests with simulated NAT"/>
+    </change>
+    <change idref="t49" to="t-1" to-position="48" resolved="yes">
+      <change idref="t49" attribute="effort" type="real" from="28800" to="1152000"/>
+      <change idref="t49" attribute="internalAssignments" type="string" from="" to="1 {50}"/>
+      <change idref="t49" attribute="priority" type="real" from="0" to="80"/>
+      <change idref="t49" attribute="resourceLeveledDate" type="date" to="2013-10-02T00:00:00.000Z"/>
+      <change idref="t49" attribute="title" type="string" to="Trickle ICE (generate)"/>
+    </change>
+    <change idref="t50" to="t-1" to-position="49" resolved="yes">
+      <change idref="t50" attribute="effort" type="real" from="28800" to="576000"/>
+      <change idref="t50" attribute="internalAssignments" type="string" from="" to="1 {50}"/>
+      <change idref="t50" attribute="priority" type="real" from="0" to="100"/>
+      <change idref="t50" attribute="resourceLeveledDate" type="date" to="2013-08-07T15:00:00.000Z"/>
+      <change idref="t50" attribute="title" type="string" to="TURN TCP"/>
+    </change>
+    <change idref="t51" to="t-1" to-position="50" resolved="yes">
+      <change idref="t51" attribute="effort" type="real" from="28800" to="576000"/>
+      <change idref="t51" attribute="title" type="string" to="Isolated streams"/>
+    </change>
+    <change idref="t52" to="t-1" to-position="51" resolved="yes">
+      <change idref="t52" attribute="effort" type="real" from="28800" to="1728000"/>
+      <change idref="t52" attribute="internalAssignments" type="string" from="" to="18"/>
+      <change idref="t52" attribute="resourceLeveledDate" type="date" to="2014-03-19T00:00:00.000Z"/>
+      <change idref="t52" attribute="title" type="string" to="&quot;Security properties&quot; UI"/>
+    </change>
+    <change idref="t53" to="t-1" to-position="52" resolved="yes">
+      <change idref="t53" attribute="effort" type="real" from="28800" to="1152000"/>
+      <change idref="t53" attribute="startConstraintDate" type="date" to="2014-12-15T18:00:00.000Z"/>
+      <change idref="t53" attribute="title" type="string" to="Persistent DTLS Keys"/>
+    </change>
+    <change idref="t55" to="t-1" to-position="53" resolved="yes">
+      <change idref="t55" attribute="effort" type="real" from="28800" to="1728000"/>
+      <change idref="t55" attribute="internalAssignments" type="string" from="" to="20"/>
+      <change idref="t55" attribute="resourceLeveledDate" type="date" to="2014-01-22T18:00:00.000Z"/>
+      <change idref="t55" attribute="title" type="string" to="Update ICE/ICE restart"/>
+    </change>
+    <change idref="t56" to="t-1" to-position="54" resolved="yes">
+      <change idref="t56" attribute="effort" type="real" from="28800" to="1152000"/>
+      <change idref="t56" attribute="internalAssignments" type="string" from="" to="20"/>
+      <change idref="t56" attribute="priority" type="real" from="0" to="100"/>
+      <change idref="t56" attribute="resourceLeveledDate" type="date" to="2013-09-04T17:00:00.000Z"/>
+      <change idref="t56" attribute="title" type="string" to="Detailed ICE status report to JS"/>
+    </change>
+    <change idref="t80" to="t-1" to-position="55" resolved="yes">
+      <change idref="t80" attribute="effort" type="real" from="28800" to="288000"/>
+      <change idref="t80" attribute="internalAssignments" type="string" from="" to="9"/>
+      <change idref="t80" attribute="internalPrerequisitesString" type="string" to="56FS"/>
+      <change idref="t80" attribute="priority" type="real" from="0" to="70"/>
+      <change idref="t80" attribute="resourceLeveledDate" type="date" to="2013-10-30T17:00:00.000Z"/>
+      <change idref="t80" attribute="title" type="string" to="ICE debugging panel"/>
+    </change>
+    <change idref="t57" to="t-1" to-position="56" resolved="yes">
+      <change idref="t57" attribute="effort" type="real" from="28800" to="5184000"/>
+      <change idref="t57" attribute="internalAssignments" type="string" from="" to="20"/>
+      <change idref="t57" attribute="resourceLeveledDate" type="date" to="2014-04-16T17:00:00.000Z"/>
+      <change idref="t57" attribute="title" type="string" to="Networking testbed and ICE E2E tests"/>
+    </change>
+    <change idref="t58" to="t-1" to-position="57" resolved="yes">
+      <change idref="t58" attribute="effort" type="real" from="28800" to="1152000"/>
+      <change idref="t58" attribute="internalAssignments" type="string" from="" to="14"/>
+      <change idref="t58" attribute="resourceLeveledDate" type="date" to="2013-08-07T15:00:00.000Z"/>
+      <change idref="t58" attribute="title" type="string" to="Build infrastructure for multiple machine testing"/>
+    </change>
+    <change idref="t59" to="t-1" to-position="58" resolved="yes">
+      <change idref="t59" attribute="effort" type="real" from="28800" to="5184000"/>
+      <change idref="t59" attribute="internalAssignments" type="string" from="" to="13"/>
+      <change idref="t59" attribute="resourceLeveledDate" type="date" to="2013-08-07T15:00:00.000Z"/>
+      <change idref="t59" attribute="title" type="string" to="Full interop testbed (variety of devices)"/>
+    </change>
+    <change idref="t62" to="t-1" to-position="59" resolved="yes">
+      <change idref="t62" attribute="effort" type="real" from="28800" to="5184000"/>
+      <change idref="t62" attribute="internalAssignments" type="string" from="" to="13"/>
+      <change idref="t62" attribute="resourceLeveledDate" type="date" to="2014-04-16T00:00:00.000Z"/>
+      <change idref="t62" attribute="title" type="string" to="Full suite of mochitests"/>
+    </change>
+    <change idref="t63" to="t-1" to-position="60" resolved="yes">
+      <change idref="t63" attribute="effort" type="real" from="28800" to="5184000"/>
+      <change idref="t63" attribute="internalAssignments" type="string" from="" to="22"/>
+      <change idref="t63" attribute="resourceLeveledDate" type="date" to="2013-08-07T15:00:00.000Z"/>
+      <change idref="t63" attribute="title" type="string" to="Automated networking testbed"/>
+    </change>
+    <change idref="t64" to="t-1" to-position="61" resolved="yes">
+      <change idref="t64" attribute="effort" type="real" from="28800" to="3456000"/>
+      <change idref="t64" attribute="internalAssignments" type="string" from="" to="23"/>
+      <change idref="t64" attribute="resourceLeveledDate" type="date" to="2013-08-07T15:00:00.000Z"/>
+      <change idref="t64" attribute="title" type="string" to="Improve Opus stereo support in GIPS"/>
+    </change>
+    <change idref="t65" to="t-1" to-position="62" resolved="yes">
+      <change idref="t65" attribute="effort" type="real" from="28800" to="576000"/>
+      <change idref="t65" attribute="internalAssignments" type="string" from="" to="23"/>
+      <change idref="t65" attribute="resourceLeveledDate" type="date" to="2014-01-22T01:00:00.000Z"/>
+      <change idref="t65" attribute="title" type="string" to="Implement stereo in media pipeline"/>
+    </change>
+    <change idref="t1" attribute="title" type="string" from="Task 1" to="Persona Integration" resolved="yes"/>
+    <change idref="t1" attribute="effort" type="real" from="28800" to="1152000" resolved="yes"/>
+    <change idref="t1" attribute="internalAssignments" type="string" from="" to="5" resolved="yes"/>
+    <change idref="t1" attribute="internalPrerequisitesString" type="string" to="5FS" resolved="yes"/>
+    <change idref="t1" attribute="startConstraintDate" type="date" to="2013-08-22T18:00:00.000Z" resolved="yes"/>
+    <change idref="t1" attribute="resourceLeveledDate" type="date" to="2013-09-04T15:45:00.000Z" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="EKR" date="2013-08-07T14:29:33.665Z" timestamp="2013-08-07T14:29:33.665Z">
+    <change idref="t24" attribute="effort" type="real" from="1152000" to="576000" resolved="yes"/>
+    <change idref="t24" attribute="startConstraintDate" type="date" to="2013-07-07T15:00:00.000Z" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="EKR" date="2013-08-07T14:32:31.096Z" timestamp="2013-08-07T14:32:31.096Z">
+    <change idref="t16" from="t-1" from-position="11" to="t-1" to-position="7" resolved="yes"/>
+    <change idref="t16" attribute="startConstraintDate" type="date" to="2013-08-07T15:00:00.000Z" resolved="yes"/>
+    <change idref="t24" attribute="title" type="string" from="Video perf measurements" to="Video perf measurements II" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="EKR" date="2013-08-07T14:35:09.829Z" timestamp="2013-08-07T14:35:09.829Z">
+    <change idref="t24" from="t-1" from-position="18" to="t-1" to-position="2" resolved="yes"/>
+    <change idref="t24" attribute="startConstraintDate" type="date" from="2013-07-07T15:00:00.000Z" to="2013-08-07T15:00:00.000Z" resolved="yes"/>
+    <change idref="t42" attribute="resourceLeveledDate" type="date" from="2013-10-02T15:00:00.000Z" to="2013-09-18T15:00:00.000Z" resolved="yes"/>
+    <change idref="t43" attribute="resourceLeveledDate" type="date" from="2013-09-04T00:00:00.000Z" to="2013-08-21T00:00:00.000Z" resolved="yes"/>
+    <change idref="t45" attribute="title" type="string" from="RTP/RTCP-mux" to="RTP/RTCP-mux finish" resolved="yes"/>
+    <change idref="t45" attribute="effort" type="real" from="576000" to="288000" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="EKR" date="2013-08-07T14:43:45.668Z" timestamp="2013-08-07T14:43:45.668Z">
+    <change idref="t81" to="t-1" to-position="0" resolved="yes">
+      <change idref="t81" attribute="effort" type="real" from="28800" to="864000"/>
+      <change idref="t81" attribute="internalAssignments" type="string" from="" to="17"/>
+      <change idref="t81" attribute="resourceLeveledDate" type="date" to="2013-08-07T15:00:00.000Z"/>
+      <change idref="t81" attribute="title" type="string" to="FIREFOX 26"/>
+    </change>
+    <change idref="t82" to="t-1" to-position="1" resolved="yes">
+      <change idref="t82" attribute="effort" type="real" from="28800" to="864000"/>
+      <change idref="t82" attribute="internalAssignments" type="string" from="" to="17"/>
+      <change idref="t82" attribute="resourceLeveledDate" type="date" to="2013-09-18T00:00:00.000Z"/>
+      <change idref="t82" attribute="title" type="string" to="FIREFOX 27"/>
+    </change>
+    <change idref="t83" to="t-1" to-position="2" resolved="yes">
+      <change idref="t83" attribute="effort" type="real" from="28800" to="864000"/>
+      <change idref="t83" attribute="internalAssignments" type="string" from="" to="17"/>
+      <change idref="t83" attribute="resourceLeveledDate" type="date" to="2013-10-30T00:00:00.000Z"/>
+      <change idref="t83" attribute="title" type="string" to="FIREFOX 28"/>
+    </change>
+  </task-change-set>
+  <task-change-set user="EKR" date="2013-08-07T14:46:15.393Z" timestamp="2013-08-07T14:46:15.393Z">
+    <change idref="t84" to="t-1" to-position="3" resolved="yes">
+      <change idref="t84" attribute="effort" type="real" from="28800" to="864000"/>
+      <change idref="t84" attribute="internalAssignments" type="string" from="" to="30"/>
+      <change idref="t84" attribute="internalPrerequisitesString" type="string" to="83FS"/>
+      <change idref="t84" attribute="resourceLeveledDate" type="date" to="2013-12-11T16:00:00.000Z"/>
+      <change idref="t84" attribute="title" type="string" to="FIREFOX 29"/>
+    </change>
+    <change idref="t82" attribute="resourceLeveledDate" type="date" from="2013-09-18T00:00:00.000Z" to="2013-09-18T15:00:00.000Z" resolved="yes"/>
+    <change idref="t82" attribute="internalAssignments" type="string" from="17" to="28" resolved="yes"/>
+    <change idref="t82" attribute="internalPrerequisitesString" type="string" to="81FS" resolved="yes"/>
+    <change idref="t83" attribute="resourceLeveledDate" type="date" from="2013-10-30T00:00:00.000Z" to="2013-10-30T15:00:00.000Z" resolved="yes"/>
+    <change idref="t83" attribute="internalAssignments" type="string" from="17" to="29" resolved="yes"/>
+    <change idref="t83" attribute="internalPrerequisitesString" type="string" to="82FS" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="EKR" date="2013-08-07T14:48:37.394Z" timestamp="2013-08-07T14:48:37.394Z">
+    <change idref="t81" attribute="styleDict" type="dict" to="{
+    &quot;font-fill&quot; =     {
+        b = &quot;0.14779&quot;;
+        g = &quot;0.171372&quot;;
+        r = 1;
+    };
+}" resolved="yes"/>
+    <change idref="t82" attribute="styleDict" type="dict" to="{
+    &quot;font-fill&quot; =     {
+        b = &quot;0.14779&quot;;
+        g = &quot;0.171372&quot;;
+        r = 1;
+    };
+}" resolved="yes"/>
+    <change idref="t83" attribute="styleDict" type="dict" to="{
+    &quot;font-fill&quot; =     {
+        b = &quot;0.14779&quot;;
+        g = &quot;0.171372&quot;;
+        r = 1;
+    };
+}" resolved="yes"/>
+    <change idref="t84" attribute="styleDict" type="dict" to="{
+    &quot;font-fill&quot; =     {
+        b = &quot;0.14779&quot;;
+        g = &quot;0.171372&quot;;
+        r = 1;
+    };
+}" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="EKR" date="2013-08-07T16:11:36.691Z" timestamp="2013-08-07T16:11:36.691Z">
+    <change idref="t1" attribute="startConstraintDate" type="date" from="2013-08-22T18:00:00.000Z" to="2013-09-04T23:00:00.000Z" resolved="yes"/>
+    <change idref="t1" attribute="resourceLeveledDate" type="date" from="2013-09-04T15:45:00.000Z" to="2013-09-04T23:00:00.000Z" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="EKR" date="2013-08-07T16:14:28.117Z" timestamp="2013-08-07T16:14:28.117Z">
+    <change idref="t42" attribute="resourceLeveledDate" type="date" from="2013-09-18T15:00:00.000Z" resolved="yes"/>
+    <change idref="t42" attribute="internalAssignments" type="string" from="19" to="" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="EKR" date="2013-08-07T16:18:29.125Z" timestamp="2013-08-07T16:18:29.125Z">
+    <change idref="t45" from="t-1" from-position="49" to="t-1" to-position="38" resolved="yes"/>
+    <change idref="t39" attribute="resourceLeveledDate" type="date" from="2013-10-16T15:01:24.000Z" to="2013-08-21T18:00:00.000Z" resolved="yes"/>
+    <change idref="t39" attribute="internalAssignments" type="string" from="2 {60}" to="19" resolved="yes"/>
+    <change idref="t42" attribute="internalAssignments" type="string" from="" to="2 {60}" resolved="yes"/>
+    <change idref="t42" attribute="resourceLeveledDate" type="date" to="2013-12-02T18:42:19.000Z" resolved="yes"/>
+    <change idref="t43" attribute="resourceLeveledDate" type="date" from="2013-08-21T00:00:00.000Z" to="2013-10-16T15:01:24.000Z" resolved="yes"/>
+    <change idref="t43" attribute="internalAssignments" type="string" from="19" to="2 {60}" resolved="yes"/>
+    <change idref="t44" attribute="resourceLeveledDate" type="date" from="2014-02-19T17:00:00.000Z" to="2014-07-23T15:06:57.000Z" resolved="yes"/>
+    <change idref="t45" attribute="effort" type="real" from="288000" to="298800" resolved="yes"/>
+    <change idref="t45" attribute="startConstraintDate" type="date" to="2013-08-07T15:00:00.000Z" resolved="yes"/>
+    <change idref="t72" attribute="resourceLeveledDate" type="date" from="2014-03-19T16:00:00.000Z" to="2014-08-20T15:06:57.000Z" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="EKR" date="2013-08-07T16:21:17.795Z" timestamp="2013-08-07T16:21:17.795Z">
+    <change idref="t43" from="t-1" from-position="44" resolved="yes">
+      <change idref="t43" attribute="effort" type="real" from="28800" to="576000"/>
+      <change idref="t43" attribute="title" type="string" to="Plan and scope signaling support for &gt;1 A/V"/>
+    </change>
+    <change idref="t42" attribute="internalPrerequisitesString" type="string" from="43FS" resolved="yes"/>
+    <change idref="t42" attribute="resourceLeveledDate" type="date" from="2013-12-02T18:42:19.000Z" to="2013-10-16T15:01:24.000Z" resolved="yes"/>
+    <change idref="t44" attribute="resourceLeveledDate" type="date" from="2014-07-23T15:06:57.000Z" to="2014-06-05T21:26:01.000Z" resolved="yes"/>
+    <change idref="t72" attribute="resourceLeveledDate" type="date" from="2014-08-20T15:06:57.000Z" to="2014-07-03T21:26:01.000Z" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="EKR" date="2013-08-07T16:23:19.587Z" timestamp="2013-08-07T16:23:19.587Z">
+    <change idref="t87" to="t-1" to-position="65" resolved="yes">
+      <change idref="t87" attribute="effort" type="real" from="28800" to="288000"/>
+      <change idref="t87" attribute="internalAssignments" type="string" from="" to="19"/>
+      <change idref="t87" attribute="resourceLeveledDate" type="date" to="2013-10-16T18:00:00.000Z"/>
+      <change idref="t87" attribute="title" type="string" to="PT reuse/demux"/>
+    </change>
+    <change idref="t88" to="t-1" to-position="66" resolved="yes">
+      <change idref="t88" attribute="effort" type="real" from="28800" to="288000"/>
+      <change idref="t88" attribute="internalAssignments" type="string" from="" to="19"/>
+      <change idref="t88" attribute="resourceLeveledDate" type="date" to="2013-10-30T18:00:00.000Z"/>
+      <change idref="t88" attribute="title" type="string" to="RTP Header Extension for Demux"/>
+    </change>
+    <change idref="t89" to="t-1" to-position="67" resolved="yes">
+      <change idref="t89" attribute="effort" type="real" from="28800" to="144000"/>
+      <change idref="t89" attribute="internalAssignments" type="string" from="" to="19"/>
+      <change idref="t89" attribute="resourceLeveledDate" type="date" to="2013-11-13T19:00:00.000Z"/>
+      <change idref="t89" attribute="title" type="string" to="SSRC Demux"/>
+    </change>
+  </task-change-set>
+  <task-change-set user="EKR" date="2013-08-07T19:31:19.089Z" timestamp="2013-08-07T19:31:19.089Z">
+    <change idref="t39" attribute="resourceLeveledDate" type="date" from="2013-08-21T18:00:00.000Z" to="2013-09-04T22:00:00.000Z" resolved="yes"/>
+    <change idref="t39" attribute="internalAssignments" type="string" from="19" to="19 {50}" resolved="yes"/>
+    <change idref="t44" attribute="internalAssignments" type="string" from="19" to="19 {50}" resolved="yes"/>
+    <change idref="t45" attribute="internalAssignments" type="string" from="19" to="19 {50}" resolved="yes"/>
+    <change idref="t72" attribute="resourceLeveledDate" type="date" from="2014-07-03T21:26:01.000Z" to="2014-07-31T21:26:02.000Z" resolved="yes"/>
+    <change idref="t72" attribute="internalAssignments" type="string" from="19" to="19 {50}" resolved="yes"/>
+    <change idref="t87" attribute="resourceLeveledDate" type="date" from="2013-10-16T18:00:00.000Z" to="2013-12-25T23:00:00.000Z" resolved="yes"/>
+    <change idref="t87" attribute="internalAssignments" type="string" from="19" to="19 {50}" resolved="yes"/>
+    <change idref="t88" attribute="resourceLeveledDate" type="date" from="2013-10-30T18:00:00.000Z" to="2014-01-22T23:00:00.000Z" resolved="yes"/>
+    <change idref="t88" attribute="internalAssignments" type="string" from="19" to="19 {50}" resolved="yes"/>
+    <change idref="t89" attribute="resourceLeveledDate" type="date" from="2013-11-13T19:00:00.000Z" to="2014-02-19T23:00:00.000Z" resolved="yes"/>
+    <change idref="t89" attribute="internalAssignments" type="string" from="19" to="19 {50}" resolved="yes"/>
+  </task-change-set>
+  <resource-change-set user="EKR" date="2013-08-07T11:54:29.423Z" timestamp="2013-08-07T11:54:29.423Z">
+    <change idref="r2" to="r-1" to-position="1" resolved="yes">
+      <change idref="r2" attribute="name" type="string" to="ABR"/>
+      <change idref="r2" attribute="unitsAvailable" type="real" from="1" to="0.5999999642372131"/>
+    </change>
+    <change idref="r3" to="r-1" to-position="2" resolved="yes">
+      <change idref="r3" attribute="name" type="string" to="Jesup"/>
+      <change idref="r3" attribute="unitsAvailable" type="real" from="1" to="0.699999988079071"/>
+    </change>
+    <change idref="r4" to="r-1" to-position="3" resolved="yes">
+      <change idref="r4" attribute="name" type="string" to="Tim"/>
+    </change>
+    <change idref="r5" to="r-1" to-position="4" resolved="yes">
+      <change idref="r5" attribute="name" type="string" to="Ryan"/>
+    </change>
+    <change idref="r6" to="r-1" to-position="5" resolved="yes">
+      <change idref="r6" attribute="name" type="string" to="Paul"/>
+    </change>
+    <change idref="r7" to="r-1" to-position="6" resolved="yes">
+      <change idref="r7" attribute="name" type="string" to="GCP"/>
+    </change>
+    <change idref="r8" to="r-1" to-position="7" resolved="yes">
+      <change idref="r8" attribute="name" type="string" to="Ben"/>
+    </change>
+    <change idref="r9" to="r-1" to-position="8" resolved="yes">
+      <change idref="r9" attribute="name" type="string" to="JIB"/>
+    </change>
+    <change idref="r10" to="r-1" to-position="9" resolved="yes">
+      <change idref="r10" attribute="name" type="string" to="UX"/>
+    </change>
+    <change idref="r11" to="r-1" to-position="10" resolved="yes">
+      <change idref="r11" attribute="name" type="string" to="Roc"/>
+    </change>
+    <change idref="r12" to="r-1" to-position="11" resolved="yes">
+      <change idref="r12" attribute="name" type="string" to="Shian-Yow"/>
+    </change>
+    <change idref="r13" to="r-1" to-position="12" resolved="yes">
+      <change idref="r13" attribute="name" type="string" to="Test 1"/>
+    </change>
+    <change idref="r14" to="r-1" to-position="13" resolved="yes">
+      <change idref="r14" attribute="name" type="string" to="Adam Cain"/>
+    </change>
+    <change idref="r15" to="r-1" to-position="14" resolved="yes">
+      <change idref="r15" attribute="name" type="string" to="Shelly"/>
+    </change>
+    <change idref="r16" to="r-1" to-position="15" resolved="yes">
+      <change idref="r16" attribute="name" type="string" to="Randy"/>
+    </change>
+    <change idref="r18" to="r-1" to-position="16" resolved="yes">
+      <change idref="r18" attribute="name" type="string" to="UX + Frontend"/>
+    </change>
+    <change idref="r19" to="r-1" to-position="17" resolved="yes">
+      <change idref="r19" attribute="name" type="string" to="Ehugg"/>
+    </change>
+    <change idref="r20" to="r-1" to-position="18" resolved="yes">
+      <change idref="r20" attribute="name" type="string" to="Network Engineer 1"/>
+    </change>
+    <change idref="r21" to="r-1" to-position="19" resolved="yes">
+      <change idref="r21" attribute="name" type="string" to="Network engineer 2"/>
+    </change>
+    <change idref="r22" to="r-1" to-position="20" resolved="yes">
+      <change idref="r22" attribute="name" type="string" to="Ted"/>
+    </change>
+    <change idref="r23" to="r-1" to-position="21" resolved="yes">
+      <change idref="r23" attribute="name" type="string" to="Rillian"/>
+    </change>
+    <change idref="r24" to="r-1" to-position="22" resolved="yes">
+      <change idref="r24" attribute="name" type="string" to="Jed"/>
+    </change>
+    <change idref="r25" to="r-1" to-position="23" resolved="yes">
+      <change idref="r25" attribute="name" type="string" to="Resource 2"/>
+    </change>
+    <change idref="r17" to="r-1" to-position="24" resolved="yes">
+      <change idref="r17" attribute="name" type="string" to="Resource 1"/>
+    </change>
+    <change idref="r1" attribute="unitsAvailable" type="real" from="1" to="0.5" resolved="yes"/>
+    <change idref="r1" attribute="name" type="string" from="Resource 1" to="EKR" resolved="yes"/>
+  </resource-change-set>
+  <resource-change-set user="EKR" date="2013-08-07T14:43:45.663Z" timestamp="2013-08-07T14:43:45.663Z">
+    <change idref="r26" to="r-1" to-position="25" resolved="yes">
+      <change idref="r26" attribute="name" type="string" to="Resource 1"/>
+    </change>
+    <change idref="r17" attribute="name" type="string" from="Resource 1" to="RELEASE" resolved="yes"/>
+  </resource-change-set>
+  <resource-change-set user="EKR" date="2013-08-07T14:46:15.388Z" timestamp="2013-08-07T14:46:15.388Z">
+    <change idref="r28" to="r-1" to-position="25" resolved="yes">
+      <change idref="r28" attribute="name" type="string" to="FF 27"/>
+    </change>
+    <change idref="r29" to="r-1" to-position="26" resolved="yes">
+      <change idref="r29" attribute="name" type="string" to="FF 28"/>
+    </change>
+    <change idref="r30" to="r-1" to-position="27" resolved="yes">
+      <change idref="r30" attribute="name" type="string" to="FF 29"/>
+    </change>
+    <change idref="r17" attribute="name" type="string" from="RELEASE" to="FF 26" resolved="yes"/>
+  </resource-change-set>
+  <resource-change-set user="EKR" date="2013-08-07T19:31:19.083Z" timestamp="2013-08-07T19:31:19.083Z">
+    <change idref="r19" attribute="unitsAvailable" type="real" from="1" to="0.5" resolved="yes"/>
+  </resource-change-set>
+  <metadata-change-set user="EKR" date="2013-08-07T11:54:29.422Z" timestamp="2013-08-07T11:54:29.422Z">
+    <change idref="m1" attribute="fixedDate" type="date" from="2007-01-01T20:00:00.000Z" to="2013-08-07T15:00:00.000Z" resolved="yes"/>
+  </metadata-change-set>
+</changelog>
